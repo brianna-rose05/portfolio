@@ -74,3 +74,25 @@ viewTargets.forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('cursor_view'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('cursor_view'));
 });
+
+/* ------------------- TURN ON NAV BAR OPACITY IN SECTION ------------------- */
+if (window.matchMedia('(pointer: fine)').matches) {
+    const sections = document.querySelectorAll('section[id]');
+
+    const clearObserver = new IntersectionObserver((entries) => {
+    
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            const id = entry.target.id;
+            // if the highlighted link points to THIS section that just left, clear it
+            const selectedLink = document.querySelector(`.nav_link.selected[href="#${id}"]`);
+            if (selectedLink) {
+                document.querySelectorAll('.nav_link, .btn').forEach(el => {
+                    el.classList.remove('selected');
+                });
+            }
+        }
+    });
+});
+}
+sections.forEach(section => clearObserver.observe(section));
