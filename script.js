@@ -1,0 +1,56 @@
+const hamburger = document.querySelector(".hamburger_menu");
+const navMenu = document.querySelector(".nav_menu");
+const navLinks = document.querySelectorAll(".nav_link");
+const footerBtns = document.querySelectorAll(".menu_button_container .btn");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+
+document.addEventListener("click", (event) => {
+    if (!event.target.closest(".navigation")) {
+        navMenu.classList.remove("active");
+    }
+});
+
+function setActive(href) {
+    navLinks.forEach(link => {
+        link.classList.toggle("selected", link.getAttribute("href") === href);
+    });
+    footerBtns.forEach(btn => {
+        btn.classList.toggle("selected", btn.getAttribute("href") === href);
+    });
+}
+
+navLinks.forEach((link) => {
+    link.addEventListener("click", () => setActive(link.getAttribute("href")));
+});
+footerBtns.forEach((btn) => {
+    btn.addEventListener("click", () => setActive(btn.getAttribute("href")));
+});
+/* ------------------------------ Scroll reveal ----------------------------- */
+const options = {
+    root: null, //watch whole document
+    rootMargin: '0px',
+    threshold: 0.3, //element considered visible if at least 30% in viewport
+};
+
+const callback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains("animated")) {
+            if (entry.target.classList.contains("stagger")) {
+                const cards = Array.from(entry.target.parentElement.children);
+                const index = cards.indexOf(entry.target);
+                entry.target.style.animationDelay = `${index * 250}ms`;
+            }
+            entry.target.classList.add("animated");
+        }
+    });
+};
+
+const observer = new IntersectionObserver(callback, options);
+const animatedElements = document.querySelectorAll('.animate');
+
+
+animatedElements.forEach(element => {observer.observe(element)});
