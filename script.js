@@ -54,3 +54,23 @@ const animatedElements = document.querySelectorAll('.animate');
 
 
 animatedElements.forEach(element => {observer.observe(element)});
+
+/* ------------------------------- DOT CURSOR ------------------------------- */
+const cursor = document.querySelector('.cursor_dot');
+const viewTargets = document.querySelectorAll('[data-cursor="view"]');
+
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+})
+
+document.querySelectorAll('a, button, .btn').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('cursor_grow'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor_grow'));
+});
+
+
+viewTargets.forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('cursor_view'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor_view'));
+});
