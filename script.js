@@ -86,6 +86,13 @@ if (window.matchMedia('(pointer: fine)').matches) {
         cursor.style.top = `${e.clientY}px`;
     });
 
+    // grow on hover over interactive elements
+    document.querySelectorAll('a, button, .btn').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('cursor_grow'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor_grow'));
+    });
+
+    // "View" state over tagged cards
     viewTargets.forEach(el => {
         el.addEventListener('mouseenter', () => cursor.classList.add('cursor_view'));
         el.addEventListener('mouseleave', () => cursor.classList.remove('cursor_view'));
