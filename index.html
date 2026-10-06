@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BriAnna Pischke's portfolio site" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
     <script src="script.js" defer></script>
@@ -24,7 +25,11 @@
                 <img src="assets/logo.svg" alt="logo" class="logo_img">
             </a>
             <div class="hamburger_menu">
-                <img class="hamburger_img" src="assets/hamburger.svg"/>
+                <button class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-expanded="false">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
             </div>
             <div class="nav_menu">
                 <div class="nav_links_wrapper">
@@ -118,23 +123,26 @@
                         </li>
                         <li class="card" id="card2">
                             <div class="card-body" data-cursor="view">
-                                <div class="image_container">
-                                    <a href="https://briannapischke-crwnclothing.netlify.app/" target="_blank">
-                                        <img class="card_background_image" src="assets/crwn-clothing.png" alt="crwn clothing store">
+                                <div class="image_container no_boarder">
+                                    <a href="https://tdfeed.com/" target="_blank">
+                                        <img class="card_background_image" src="assets/tdfeed.png" alt="td feed app">
                                         <div class="card_description">
                                         <div class="card_pills_wrap">
                                         <div class="card_pill_dark">
                                                 <p class="pill_text">React</p>
                                         </div>
                                         <div class="card_pill_dark">
-                                            <p class="pill_text">Firebase</p>
+                                            <p class="pill_text">Supabase</p>
                                         </div>
                                         <div class="card_pill_dark">
-                                            <p class="pill_text">Context API</p>
+                                            <p class="pill_text">TanStack Query</p>
+                                        </div> 
+                                        <div class="card_pill_dark">
+                                            <p class="pill_text">Node.js</p>
                                         </div>
                                     </div>
-                                    <h3> E-commerce store </h3>
-                                    <p class="body_text">React e-commerce app with a real cart, product categories, user auth, and Firestore backend.</p>
+                                    <h3> TD Feed </h3>
+                                    <p class="body_text">Research feed reader that pulls articles from RSS sources, with Google sign-in, saved articles, and custom collections.</p>
                                         </div>
                                     </a>
                                 </div>
@@ -170,29 +178,6 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="card" id="card4">
-                            <div class="card-body" data-cursor="view">
-                                <div class="image_container">
-                                    <a href="https://brianna-rose05.github.io/js-projects/infinite-scroll/" target="_blank">
-                                        <img class="card_background_image" src="assets/infinite_scroll.png" alt="infinite scroll">
-                                    </a>
-                                <div class="card_description">
-                                    <div class="card_pills_wrap">
-                                    <div class="card_pill_dark">
-                                        <p class="pill_text">HTML</p>
-                                    </div>
-                                        <div class="card_pill_dark">
-                                            <p class="pill_text">CSS</p>
-                                        </div>
-                                    <div class="card_pill_dark">
-                                        <p class="pill_text">Vanilla JS</p>
-                                    </div>
-                                </div>
-                                <h3>Infinite scroll photo gallery</h3>
-                                <p class="body_text"> Endless photo feed from the Unsplash API — infinite scroll with async image loading.</p>
-                            </div>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -226,10 +211,10 @@
                         <a class="animate fade-in stagger" href="https://www.latvalalumber.com/" target="_blank">
                             <div class="card_grid_item">
                                 <div class="image_container" data-cursor="view">
-                                    <img class="card_background_image" src="assets/latvala.png" alt="Lavala Lumber">
+                                    <img class="card_background_image" src="assets/latvala.png" alt="Latvala Lumber">
                                 </div>
                                 <div class="card_content">
-                                    <h3 class="card_title">Lavala Lumber Co.</h3>
+                                    <h3 class="card_title">Latvala Lumber Co.</h3>
                                     <div class="card_pills_wrap">
                                         <div class="card_pill">
                                             <p class="pill_text">Design + build</p>
@@ -282,11 +267,12 @@
                     <p class="number animate fade-in">01.</p>
                     <div class="experience_card_main_content animate fade-in">
                         <div class="experience_card_content">
-                        <h3 class="experience_card_role">Web Designer & Developer</h3> 
-                        <p class="experience_card_company">Freelance</p>
-                        <p class="experience_card_desc">Designed and built live websites for local businesses in Webflow — a lumber yard, a design center, and a granite fabricator — handling design, build, CMS, and hosting.</p>
+                        <h3 class="experience_card_role">Web Dev & Design Intern
+</h3> 
+                        <p class="experience_card_company">Wallin Education Partners</p>
+                        <p class="experience_card_desc">Leading a full redesign of the organization's website, from site audit and content strategy through design and build — planning a new structure for seven distinct audiences, including scholars, alumni, donors, and school counselors.</p>
                         </div>
-                        <p class="experience_card_date">2024 – Present</p>
+                        <p class="experience_card_date">Sept 2026 – Present</p>
                     </div>
                 </div>
                 <div class="experience_card">
@@ -362,16 +348,16 @@
                 </div>
                     <div class="animate fade-in stagger bento_cell bento_status">
                         <p class="bento_label">[Availability]</p>
-                        <div class="status">
-                             <div class="green_circle"></div>
+                        <div class="status ">
+                             <span class="green_circle"></span>
                             <div>
-                                <p class="status_title">Open to software engineering internships</p>
+                                <p class="status_title">Open to full-time roles</p>
                             </div>
                         </div>
-                        <div class="flex_row">
-                            <p class="bento_desc">Summer 2026 ·</p>
-                            <p class="bento_desc">Fall 2026</p>
-                        </div>
+                       <div class="flex_row">
+                            <p class="bento_desc">Web dev ·</p>
+                            <p class="bento_desc">Available now</p>
+                        </div> 
                 </div>
                 </div>
             </div>
