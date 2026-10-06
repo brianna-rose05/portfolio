@@ -296,7 +296,7 @@ a {
 
 /* Cards */
 :root {
-    --cards: 4;
+    --cards: 3;
     --cardHeight: min(80vh, 720px);
     --cardTopPadding: 1rem;
     --cardMargin: 2vw;
@@ -359,6 +359,10 @@ a {
     overflow: hidden;
     width: 100%;
     height: 100%;
+    background-color: #f7f7f7;
+}
+.no_boarder {
+    border: none;
 }
 
 .image_container > a {
@@ -976,6 +980,20 @@ a {
 .nav_number {
     display: none;
 }
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background-color: #111; /* your icon color */
+  
+}
+.hamburger { 
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
 
 /* ------------------------------ CAROUSEL TEXT ----------------------------- */
 .carousel {
@@ -1075,7 +1093,8 @@ a {
         inset: 0% 0% auto auto;
     }
 
-    .nav_menu.active {
+   
+    .is-active {
         display: flex;
     }
 
