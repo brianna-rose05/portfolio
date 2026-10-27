@@ -6,51 +6,7 @@
 <meta name="description" content="BriAnna Pischke builds tools that let people do the work they care about.">
 <title>BriAnna Pischke</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400&display=swap">
-<style>
-/* Layout: one 640px reading column, hash-routed pages (home / projects / writing), Sigil-style */
-:root{
-  --bg:#FFFFFF; --fg:#1A1A1C; --muted:#5A5C66; --soft:#3A3A40;
-  --line:#DCDEE6; --fill:#ECEDF2; --link:#1F3FB8; --link-hover:#132A80;
-  --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
-  --mono:'IBM Plex Mono', ui-monospace, Menlo, monospace;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#121317; --fg:#E8E9EE; --muted:#9A9CA8; --soft:#C4C6D0;
-  --line:#2C2E36; --fill:#1E2027; --link:#8FA6FF; --link-hover:#B8C6FF; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#121317; --fg:#E8E9EE; --muted:#9A9CA8; --soft:#C4C6D0;
-  --line:#2C2E36; --fill:#1E2027; --link:#8FA6FF; --link-hover:#B8C6FF; color-scheme:dark}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:1.125rem;line-height:1.65;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:3.5rem 3rem}
-main{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:3rem}
-a{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-a:hover{color:var(--link-hover)}
-a:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
-h1{margin:0;font-size:2.5rem;line-height:1.15;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
-h2{margin:0;font-size:1.5rem;font-weight:600;text-wrap:balance}
-h2 a{color:inherit}
-p{margin:0}
-section,header{display:flex;flex-direction:column;gap:1.1rem}
-.lede{font-size:1.25rem;color:var(--soft)}
-ul{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:.7rem}
-strong{font-weight:600}
-.nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.02em}
-.nav a{color:var(--muted);text-decoration:none}
-.nav a[aria-current="page"]{color:var(--fg);text-decoration:underline}
-.portrait{width:168px;height:168px;border-radius:50%;background:var(--fill);border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.75rem;color:var(--muted);text-decoration:none}
-figure{margin:.25rem 0;display:flex;flex-direction:column;gap:.5rem}
-.receipt{width:100%;max-width:100%;aspect-ratio:16/10;background:var(--fill);border:1px solid var(--line);border-radius:6px;
-  display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;box-sizing:border-box;
-  font-family:var(--mono);font-size:.8rem;color:var(--muted)}
-figcaption{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
-.todo{font-family:var(--mono);font-size:.72rem;color:var(--muted);background:var(--fill);padding:.05rem .35rem;border-radius:3px;white-space:nowrap}
-.card{display:flex;flex-direction:column;gap:.5rem;padding-block:1.25rem;border-top:1px solid var(--line)}
-.card h3{margin:0;font-size:1.2rem;font-weight:600}
-.meta{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
-footer{border-top:1px solid var(--line);padding-top:1.25rem;display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;font-size:.95rem;color:var(--muted)}
-.copy{font:inherit;color:var(--link);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -223,56 +179,7 @@ footer{border-top:1px solid var(--line);padding-top:1.25rem;display:flex;flex-wr
   </footer>
 </main>
 
-<script>
-(function(){
-  var pages = ['home','projects','writing','photos'];
-  function show(){
-    var h = (location.hash || '').slice(1);
-    var route = pages.indexOf(h) >= 0 ? h : 'home';
-    var anchor = (h && pages.indexOf(h) < 0) ? h : null;
-    document.querySelectorAll('[data-page]').forEach(function(el){
-      var on = el.getAttribute('data-page') === route;
-      el.hidden = !on;
-      el.style.display = on ? 'flex' : '';
-    });
-    document.querySelectorAll('[data-route]').forEach(function(a){
-      if (a.getAttribute('data-route') === route) a.setAttribute('aria-current','page');
-      else a.removeAttribute('aria-current');
-    });
-    if (anchor) { var t = document.getElementById(anchor); if (t) { t.scrollIntoView({behavior:'smooth'}); return; } }
-    window.scrollTo(0,0);
-  }
-  window.addEventListener('hashchange', show);
-  show();
-
-  // Placeholder links: show what's missing instead of going nowhere
-  document.querySelectorAll('a[data-todo]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      var orig = a.textContent;
-      a.textContent = 'needs ' + a.getAttribute('data-todo');
-      setTimeout(function(){ a.textContent = orig; }, 1600);
-    });
-  });
-
-  document.getElementById('totop').addEventListener('click', function(e){
-    e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});
-  });
-
-  var btn = document.getElementById('copy');
-  btn.addEventListener('click', function(){
-    var text = document.getElementById('email').textContent;
-    var done = function(){ btn.textContent = 'copied'; setTimeout(function(){ btn.textContent = 'copy'; }, 1400); };
-    try {
-      navigator.clipboard.writeText(text).then(done, function(){ selectEmail(); });
-    } catch(err){ selectEmail(); }
-  });
-  function selectEmail(){
-    var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
-    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-  }
-})();
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
