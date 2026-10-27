@@ -1,27 +1,27 @@
 /* Layout: one 640px reading column, hash-routed pages (home / projects / writing), Sigil-style */
 :root{
   /* Outside Engineer Substack theme colors */
-  --bg:#FDFDFD; --fg:#363737; --muted:#828383; --soft:#363737;
+  --bg:#FDFDFD; --fg:#1F2021; --muted:#6B6C6C; --soft:#3A3B3C;
   --line:#DDDDDD; --fill:#F0F0F0; --link:#1B263B; --link-hover:#131B2A;
   --serif:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --mono:'IBM Plex Mono', ui-monospace, Menlo, monospace;
   color-scheme:light;
 }
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased;
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:1.0625rem;line-height:1.7;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:3.5rem 3rem}
-main{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:2.5rem}
+main{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:3rem}
 a{color:var(--link);font-weight:500;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 a:hover{color:var(--link-hover)}
 a:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
 h1{margin:0;font-size:2.25rem;line-height:1.15;font-weight:600;letter-spacing:-.025em;text-wrap:balance}
-h2{margin:0;font-size:1.3rem;font-weight:600;letter-spacing:-.015em;text-wrap:balance}
-h2 a{color:inherit;text-decoration:none}
+h2{margin:0;font-size:1.5rem;line-height:1.25;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+h2 a{color:inherit;font-weight:inherit;text-decoration:none}
 h2 a:hover{text-decoration:underline}
-.card h3 a{color:inherit;text-decoration:none}
+.card h3 a{color:inherit;font-weight:inherit;text-decoration:none}
 .card h3 a:hover{text-decoration:underline}
 p{margin:0}
 section,header{display:flex;flex-direction:column;gap:.9rem}
-h2{margin-top:.25rem}
+section>h2+*{margin-top:-.15rem}
 .lede{font-size:1.175rem;color:var(--soft)}
 ul{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:.5rem}
 strong{font-weight:600}
