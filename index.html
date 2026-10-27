@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="BriAnna Pischke builds tools that let people do the work they care about.">
 <title>BriAnna Pischke</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,25 +13,30 @@
 
 <main id="top">
   <nav class="nav" aria-label="Site">
-    <a href="#photos" class="portrait portrait-side" aria-label="Portrait, opens photos"><img src="assets/black_white_headshot.jpg" alt=""></a>
-    <div class="socials" aria-label="Social links">
-      <a href="https://x.com/_briannarose" target="_blank" rel="noopener">X</a>
+    <a href="#home" class="site-name">briannapischke.com</a>
+    <div class="nav-links">
+      <a href="#home" data-route="home">About</a>
+      <a href="#projects" data-route="projects">Projects</a>
+      <a href="#writing" data-route="writing">Writing</a>
+      <a href="#photos" data-route="photos">Photos</a>
+    </div>
+    <div class="socials">
+      <p class="nav-label">Find me on</p>
+      <a href="https://x.com/_briannarose" target="_blank" rel="noopener">X/Twitter</a>
       <a href="https://www.linkedin.com/in/brianna-p-ba80b0282/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/brianna-rose05" target="_blank" rel="noopener">GitHub</a>
       <a href="https://outsideengineer.substack.com/" target="_blank" rel="noopener">Substack</a>
     </div>
-    <a href="#home" data-route="home">Home</a>
-    <a href="#projects" data-route="projects">Projects</a>
-    <a href="#writing" data-route="writing">Writing</a>
-    <a href="#photos" data-route="photos">Photos</a>
   </nav>
 
   <!-- HOME -->
-  <div data-page="home" style="display:flex;flex-direction:column;gap:3.25rem">
-    <header>
-      <a class="portrait portrait-mobile" href="#photos" aria-label="Portrait, opens photos"><img src="assets/black_white_headshot.jpg" alt="BriAnna Pischke"></a>
-      <h1>BriAnna Pischke</h1>
-      <p class="lede">Engineer and builder. I'm working toward a world where nobody spends their life on work they don't care about.</p>
+  <div data-page="home" class="page">
+    <header class="hero">
+      <div class="hero-text">
+        <h1>BriAnna Pischke</h1>
+        <p class="lede">Engineer and builder. I'm working toward a world where nobody spends their life on work they don't care about.</p>
+      </div>
+      <a class="portrait" href="#photos" aria-label="Portrait, opens photos"><img src="assets/black_white_headshot.jpg" alt="BriAnna Pischke"></a>
     </header>
 
     <section>
@@ -95,7 +100,7 @@
   </div>
 
   <!-- PROJECTS -->
-  <div data-page="projects" hidden style="flex-direction:column;gap:2rem">
+  <div data-page="projects" class="page" hidden>
     <header>
       <h1>Projects</h1>
       <p class="lede">Things I've built, newest thinking first. Most started as a problem I had myself.</p>
@@ -137,7 +142,7 @@
   </div>
 
   <!-- WRITING -->
-  <div data-page="writing" hidden style="flex-direction:column;gap:2rem">
+  <div data-page="writing" class="page" hidden>
     <header>
       <h1>Writing</h1>
       <p class="lede">Outside Engineer: real-world software concepts, decoded.</p>
@@ -161,7 +166,7 @@
   </div>
 
   <!-- PHOTOS -->
-  <div data-page="photos" hidden style="flex-direction:column;gap:2rem">
+  <div data-page="photos" class="page" hidden>
     <header>
       <h1>Photos</h1>
       <p class="lede">A few I like.</p>
