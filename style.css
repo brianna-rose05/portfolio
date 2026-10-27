@@ -15,7 +15,10 @@ a:hover{color:var(--link-hover)}
 a:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
 h1{margin:0;font-size:2.25rem;line-height:1.15;font-weight:600;letter-spacing:-.025em;text-wrap:balance}
 h2{margin:0;font-size:1.3rem;font-weight:600;letter-spacing:-.015em;text-wrap:balance}
-h2 a{color:inherit}
+h2 a{color:inherit;text-decoration:none}
+h2 a:hover{text-decoration:underline}
+.card h3 a{color:inherit;text-decoration:none}
+.card h3 a:hover{text-decoration:underline}
 p{margin:0}
 section,header{display:flex;flex-direction:column;gap:.9rem}
 h2{margin-top:.25rem}
@@ -24,19 +27,21 @@ ul{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:.5rem}
 strong{font-weight:600}
 .nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-family:var(--serif);font-size:.9rem}
 .nav a{color:var(--muted);text-decoration:none}
-.nav a[aria-current="page"]{color:var(--fg);text-decoration:underline}
-.nav a:hover{color:var(--fg)}
+.nav a[aria-current="page"]{color:var(--fg);font-weight:500}
+.nav a:hover{color:var(--fg);text-decoration:underline}
+.nav-name:hover{text-decoration:none!important}
+.portrait.portrait-side{display:none}
 .nav-name{display:none}
 /* Wide screens: tabs move to a fixed sidebar on the left */
 @media (min-width:1100px){
   main{margin-left:calc(50vw - 200px);margin-right:auto}
   .nav{position:fixed;top:calc(3.5rem + env(safe-area-inset-top,0px));left:calc(50vw - 440px);
     width:160px;flex-direction:column;flex-wrap:nowrap;gap:.6rem;font-size:.95rem}
+  .portrait.portrait-side{display:block;width:120px;height:120px;margin-bottom:1rem}
+  .portrait.portrait-mobile{display:none}
   .nav-name{display:block;font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--fg)!important;margin-bottom:.5rem;letter-spacing:0}
 }
-.intro{display:flex;align-items:center;gap:1.75rem;flex-wrap:wrap}
-.intro-text{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:.6rem}
-.portrait{flex:none;width:140px;height:140px;border-radius:50%;overflow:hidden;background:var(--fill);border:1px solid var(--line);display:block}
+.portrait{flex:none;width:96px;height:96px;border-radius:50%;overflow:hidden;background:var(--fill);border:1px solid var(--line);display:block}
 .portrait img{display:block;width:100%;height:100%;object-fit:cover}
 figure{margin:.25rem 0;display:flex;flex-direction:column;gap:.5rem}
 .receipt{width:100%;max-width:100%;aspect-ratio:16/10;background:var(--fill);border:1px solid var(--line);border-radius:6px;
