@@ -1,10 +1,10 @@
 /* Layout: one 640px reading column, hash-routed pages (home / projects / writing), Sigil-style */
 :root{
   /* Outside Engineer Substack theme colors */
-  --bg:#FBFBFB; --fg:#666666; --heading:#000000; --muted:#6B6C6C; --soft:#666666;
+  --bg:#FFFFFF; --fg:#666666; --heading:#000000; --muted:#6B6C6C; --soft:#666666;
   --line:#DDDDDD; --fill:#F0F0F0; --link:#1B263B; --link-hover:#131B2A;
   --serif:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --mono:'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --mono:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   color-scheme:light;
 }
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:1.0625rem;line-height:1.7;
@@ -29,17 +29,17 @@ strong{font-weight:600}
 .nav a{color:var(--muted);font-weight:400;text-decoration:none}
 .nav a[aria-current="page"]{color:var(--fg);font-weight:500}
 .nav a:hover{color:var(--fg);text-decoration:underline}
-.nav-name:hover{text-decoration:none!important}
 .portrait.portrait-side{display:none}
-.nav-name{display:none}
+.socials{display:none}
 /* Wide screens: tabs move to a fixed sidebar on the left */
 @media (min-width:1100px){
   main{margin-left:calc(50vw - 200px);margin-right:auto}
   .nav{position:fixed;top:calc(3.5rem + env(safe-area-inset-top,0px));left:calc(50vw - 440px);
-    width:160px;flex-direction:column;flex-wrap:nowrap;gap:.6rem;font-size:.95rem}
+    width:200px;flex-direction:column;flex-wrap:nowrap;gap:.6rem;font-size:.95rem}
   .portrait.portrait-side{display:block;width:170px;height:170px;margin-bottom:1rem}
   .portrait.portrait-mobile{display:none}
-  .nav .nav-name{display:block;font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--heading)!important;margin-bottom:.5rem;letter-spacing:0}
+  .nav .socials{display:flex;flex-wrap:nowrap;gap:.75rem;font-size:.82rem;margin-bottom:1.25rem}
+  .nav .socials a{color:var(--link);font-weight:500}
 }
 .portrait{flex:none;width:128px;height:128px;border-radius:50%;overflow:hidden;background:var(--fill);border:1px solid var(--line);display:block}
 .portrait img{display:block;width:100%;height:100%;object-fit:cover}
