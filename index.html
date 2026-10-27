@@ -1,440 +1,278 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BriAnna Pischke's portfolio site" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
-    <script src="script.js" defer></script>
-    <title>Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="BriAnna Pischke builds tools that let people do the work they care about.">
+<title>BriAnna Pischke</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one 640px reading column, hash-routed pages (home / projects / writing), Sigil-style */
+:root{
+  --bg:#FFFFFF; --fg:#1A1A1C; --muted:#5A5C66; --soft:#3A3A40;
+  --line:#DCDEE6; --fill:#ECEDF2; --link:#1F3FB8; --link-hover:#132A80;
+  --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --mono:'IBM Plex Mono', ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121317; --fg:#E8E9EE; --muted:#9A9CA8; --soft:#C4C6D0;
+  --line:#2C2E36; --fill:#1E2027; --link:#8FA6FF; --link-hover:#B8C6FF; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121317; --fg:#E8E9EE; --muted:#9A9CA8; --soft:#C4C6D0;
+  --line:#2C2E36; --fill:#1E2027; --link:#8FA6FF; --link-hover:#B8C6FF; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:1.125rem;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:3.5rem 3rem}
+main{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:3rem}
+a{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--link-hover)}
+a:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
+h1{margin:0;font-size:2.5rem;line-height:1.15;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+h2{margin:0;font-size:1.5rem;font-weight:600;text-wrap:balance}
+h2 a{color:inherit}
+p{margin:0}
+section,header{display:flex;flex-direction:column;gap:1.1rem}
+.lede{font-size:1.25rem;color:var(--soft)}
+ul{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:.7rem}
+strong{font-weight:600}
+.nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.02em}
+.nav a{color:var(--muted);text-decoration:none}
+.nav a[aria-current="page"]{color:var(--fg);text-decoration:underline}
+.portrait{width:168px;height:168px;border-radius:50%;background:var(--fill);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.75rem;color:var(--muted);text-decoration:none}
+figure{margin:.25rem 0;display:flex;flex-direction:column;gap:.5rem}
+.receipt{width:100%;max-width:100%;aspect-ratio:16/10;background:var(--fill);border:1px solid var(--line);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;box-sizing:border-box;
+  font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+figcaption{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.todo{font-family:var(--mono);font-size:.72rem;color:var(--muted);background:var(--fill);padding:.05rem .35rem;border-radius:3px;white-space:nowrap}
+.card{display:flex;flex-direction:column;gap:.5rem;padding-block:1.25rem;border-top:1px solid var(--line)}
+.card h3{margin:0;font-size:1.2rem;font-weight:600}
+.meta{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-top:1.25rem;display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;font-size:.95rem;color:var(--muted)}
+.copy{font:inherit;color:var(--link);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+</style>
 </head>
-    <body>
-    <div class="cursor_dot"></div>
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="logo-shape" viewBox="0 0 145 141">
-        <path d="M0.000488281 0.0078125V70.3647H72.4576C72.4576 51.7049 64.8238 33.8094 51.2354 20.6149C37.6471 7.4204 19.2173 0.0078125 0.000488281 0.0078125Z" fill="currentColor"/>
-        <path d="M0.000488281 140.724H72.4576V70.3667C53.2408 70.3667 34.811 77.7793 21.2227 90.9738C7.63434 104.168 0.000488281 122.064 0.000488281 140.724Z" fill="currentColor"/>
-        <path d="M144.916 140.724V70.3667H72.4587C72.4587 89.0265 80.0926 106.922 93.6809 120.117C107.269 133.311 125.699 140.724 144.916 140.724Z" fill="currentColor"/>
-        <path d="M144.916 0.00634766H72.4587V70.3633C91.6756 70.3633 110.105 62.9507 123.694 49.7562C137.282 36.5617 144.916 18.6662 144.916 0.00634766Z" fill="currentColor"/>
-    </symbol>
-    </svg>
-        <div class="navigation">
-            <a class="logo_link" href=""/>
-                <img src="assets/logo.svg" alt="logo" class="logo_img">
-            </a>
-            <div class="hamburger_menu">
-                <button class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-expanded="false">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
-            </div>
-            <div class="nav_menu">
-                <div class="nav_links_wrapper">
-                <a class="nav_link" href="#about">
-                    <p class="nav_number">01.</p>
-                    <p>About</p>
-                </a>
-                <a class="nav_link" href="#projects">
-                    <p class="nav_number">02.</p>
-                    <p>Projects</p>
-                </a>
-                <a class="nav_link" href="#experience">
-                    <p class="nav_number">03.</p>
-                    <p>Experience</p>
-                </a>
-                <a class="nav_link" href="#contact">
-                    <p class="nav_number">04.</p>
-                    <p>Contact</p>
-                </a>
-                </div>
-            </div>
-        </div>
-        <section class="section_hero">
-            <div class="container">
-                <div class="animate fade-in-up home_top_layout">
-                    <div class="name_details_wrap">
-                        <div class="available_status">
-                            <span class="green_circle"> </span>
-                            <p class="available_text">Available for work</p>
-                        </div>
-                    <h1 class="hero_text">BriAnna Pischke</h1>
-                </div>
-                    <a class="btn" href="mailto:brianna.pischke@gmail.com"><span>Contact Me</span>
-                        <span class="div"></span>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <section class="container" id="about">
-            <div class="about_me_container">
-                <img class="animate fade-in headshot" src="assets/black_white_headshot.jpg" alt="headshot">
-                <div class="about_me_text_container">
-                    <div class="about_heading_wrap">
-                        <p class="mini_heading">[About]</p>
-                        <h2 class="about_title">Nice to meet you</h2>
-                    </div>
-                    <p class="body_text">
-                        Hi, I’m BriAnna. I’m a software engineering student from Brooklyn Park, Minnesota with an interest in building purposefully and results-driven websites, applications, and tools. I was first introduced to software development in high school while working at a student-run business, where I saw it could be used to solve real problems and enhance business operations.
-                    </p>
-                    <p class="body_text">
-                        I graduated high school with my Associate's degree from Bethel University, then continued my education online through the University of Minnesota, where I'm working toward a Bachelor's degree in Software Engineering. Alongside school, I've worked full time to pay for college while growing my skills through freelance web development, self-directed learning, and personal projects that let me explore new technologies and ways of building.
-                    </p>
-                    <img class="signature" src="assets/signature.svg" alt="signature">
-                </div>
-            </div>
-        </section>
-        <section class="card_section_container" id="projects">
-            <div class="projects_container">
-                <div class="animate fade-in-up projects_heading_wrap">
-                    <p class="mini_heading">[Projects]</p>
-                    <h2 >Past Projects</h2>
-                </div>
-                <div class="card_container">
-                    <ul id="cards">
-                        <li class="card animate fade-in" id="card1">
-                            <div class="card-body" data-cursor="view">
-                                <div class="image_container">
-                                    <a href="https://brianna-rose05.github.io/airbnb/" target="_blank">
-                                        <img class="card_background_image" src="assets/airbnb.png" alt="airbnb clone">
-                                        <div class="card_description">
-                                    <div class="card_pills_wrap">
-                                        <div class="card_pill_dark">
-                                            <p class="pill_text">TypeScript</p>
-                                        </div>
-                                        <div class="card_pill_dark">
-                                            <p class="pill_text">React</p>
-                                        </div>
-                                        <div class="card_pill_dark">
-                                            <p class="pill_text">React Router</p>
-                                        </div>
-                                        <div class="card_pill_dark">
-                                            <p class="pill_text">Tailwind</p>
-                                        </div>
-                                    </div>
-                                    <h3>Airbnb clone</h3>
-                                    <p class="body_text">Airbnb-style stay  search — a where/when/who filter bar, a live budget slider, and URL-driven routing.</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="card" id="card2">
-                            <div class="card-body" data-cursor="view">
-                                <div class="image_container no_boarder">
-                                    <a href="https://tdfeed.com/" target="_blank">
-                                        <img class="card_background_image" src="assets/tdfeed.png" alt="td feed app">
-                                        <div class="card_description">
-                                        <div class="card_pills_wrap">
-                                        <div class="card_pill_dark">
-                                                <p class="pill_text">React</p>
-                                        </div>
-                                        <div class="card_pill_dark">
-                                            <p class="pill_text">Supabase</p>
-                                        </div>
-                                        <div class="card_pill_dark">
-                                            <p class="pill_text">TanStack Query</p>
-                                        </div> 
-                                        <div class="card_pill_dark">
-                                            <p class="pill_text">Node.js</p>
-                                        </div>
-                                    </div>
-                                    <h3> TD Feed </h3>
-                                    <p class="body_text">Research feed reader that pulls articles from RSS sources, with Google sign-in, saved articles, and custom collections.</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="card" id="card3">
-                            <div class="card-body" data-cursor="view">
-                                <div class="image_container">
-                                    <a href="https://ctop-quote.vercel.app/" target="_blank">
-                                        <img class="card_background_image" src="assets/quote.png" alt="quote page">
-                                    </a>
-                                <div class="card_description">
-                                    <div class="card_header_container">
-                                        <div class="card_pills_wrap">
-                                            <div class="card_pill_dark">
-                                                <p class="pill_text">React</p>
-                                            </div>
-                                            <div class="card_pill_dark">
-                                                <p class="pill_text">TypeScript</p>
-                                            </div>
-                                            <div class="card_pill_dark">
-                                                <p class="pill_text">Supabase</p>
-                                            </div>
-                                            <div class="AI_pill">
-                                                <img class="magic_wand" src="assets/magic.svg" alt="magic wand">
-                                                <p class="AI_pill_text"> AI-accelerated</p>
-                                            </div>
-                                        </div>
-                                        <h3>Commercial countertop quoter</h3>
-                                    </div>
-                                    <p class="body_text">Multi-step countertop quoting wizard - 8 steps to price out a project using real fabrication pricing across a 700-material catalog.</p>
-                                </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="container">
-            <div class="projects_container">
-                <div class="animate fade-in-up center_heading_wrap">
-                    <p class="mini_heading">[Live Websites]</p>
-                    <h2>Web Design</h2>
-                </div>
-                <div class="card_grid">
-                    <div class="grid_top_row">
-                        <a class="animate fade-in stagger"href="https://www.paramountdesigncenter.com/" target="_blank">
-                            <div class="card_grid_item">
-                                <div class="image_container" data-cursor="view">
-                                    <img class="card_background_image" src="assets/pdc.png" alt="Paramount Design Center">
-                                </div>
-                                <div class="card_content">
-                                    <h3 class="card_title">Paramount Design Center</h3>
-                                    <div class="card_pills_wrap">
-                                        <div class="card_pill">
-                                                <p class="pill_text">Design + build</p>
-                                        </div>
-                                        <div class="card_pill">
-                                                <p class="pill_text">60+ brands</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="animate fade-in stagger" href="https://www.latvalalumber.com/" target="_blank">
-                            <div class="card_grid_item">
-                                <div class="image_container" data-cursor="view">
-                                    <img class="card_background_image" src="assets/latvala.png" alt="Latvala Lumber">
-                                </div>
-                                <div class="card_content">
-                                    <h3 class="card_title">Latvala Lumber Co.</h3>
-                                    <div class="card_pills_wrap">
-                                        <div class="card_pill">
-                                            <p class="pill_text">Design + build</p>
-                                        </div>
-                                        <div class="card_pill">
-                                            <p class="pill_text">CMS-managed</p>
-                                        </div>
-                                        <div class="card_pill">
-                                            <p class="pill_text">20+ Pages</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                        <div class="grid_bottom_row">
-                            <a class="animate fade-in stagger" href="https://www.paramountgranite.com/" target="_blank">
-                                <div class="card_grid_item_bottom">
-                                    <div class="image_container" data-cursor="view">
-                                        <img class="card_background_image" src="assets/pgc.png" alt="Paramount Granite Co.">
-                                    </div>
-                                    <div class="card_content">
-                                        <h3 class="card_title">Paramount Granite Company</h3>
-                                        <div class="card_pills_wrap">
-                                            <div class="card_pill">
-                                                <p class="pill_text">Design + build</p>
-                                            </div>
-                                            <div class="card_pill">
-                                                <p class="pill_text">1,000+ quote requests</p>
-                                            </div>
-                                            <div class="card_pill">
-                                                <p class="pill_text">Live Inventory</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                </div>
-            </div>
-        </section>
-        <section class="container_dark" id="experience">
-            <div class="projects_container">
-                <div class="animate fade-in-up projects_heading_wrap">
-                    <p class="mini_heading">[Background]</p>
-                    <h2 >Experience</h2>
-                </div>
-                <div class="experience_container">
-                <div class="experience_card">
-                    <p class="number animate fade-in">01.</p>
-                    <div class="experience_card_main_content animate fade-in">
-                        <div class="experience_card_content">
-                        <h3 class="experience_card_role">Web Dev & Design Intern
-</h3> 
-                        <p class="experience_card_company">Wallin Education Partners</p>
-                        <p class="experience_card_desc">Leading a full redesign of the organization's website, from site audit and content strategy through design and build — planning a new structure for seven distinct audiences, including scholars, alumni, donors, and school counselors.</p>
-                        </div>
-                        <p class="experience_card_date">Sept 2026 – Present</p>
-                    </div>
-                </div>
-                <div class="experience_card">
-                        <p class="number animate fade-in">02.</p>
-                        <div class="experience_card_main_content animate fade-in">
-                        <div class="experience_card_content">
-                            <h3 class="experience_card_role">Project Consultant</h3> 
-                            <p class="experience_card_company">Paramount Granite Company</p>
-                            <p class="experience_card_desc">Guided residential customers and contractors through countertop projects — quoting, reviewing house plans, helping with material selections, and managing scheduling. Handled customer relationships through CRM and supported marketing with social content, Facebook/Instagram ads, and site maintenance.</p>
-                        </div>
-                    <p class="experience_card_date">2024 – 2026</p>
-                    </div>
-                </div>
-                <div class="experience_card">
-                    <p class="number animate fade-in">03.</p>
-                    <div class="experience_card_main_content animate fade-in">
-                        <div class="experience_card_content">
-                            <h3 class="experience_card_role">Business & Marketing Team Lead</h3> 
-                            <p class="experience_card_company">Mustang Enterprises</p>
-                            <p class="experience_card_desc">Led a team of 10 across social, sales, and 50+ customer relationships - and helped grow revenue 120% in my first year. Built and maintained the company website, and ran marketing campaigns for 20+ organizations.</p>
-                        </div>
-                    <p class="experience_card_date">2021 – 2023</p>
-                    </div>
-                </div>
-                <div class="experience_card">
-                    <p class="number animate fade-in">04.</p>
-                    <div class="experience_card_main_content animate fade-in">
-                        <div class="experience_card_content">
-                            <h3 class="experience_card_role">Outreach & Social Media Specialist</h3> 
-                            <p class="experience_card_company">M-TECH Robotics (High School)</p>
-                            <p class="experience_card_desc">Generated $4,000 in cold called sponsorship money within 2 months. Planned multiple company open house events and hosted robotic workshops for elementary kids. Helped grow business connections and personal STEM mentorships. </p>
-                        </div>
-                    <p class="experience_card_date">2021 – 2023</p>
-                    </div>
-                </div>
-                </div>
-                <div class="bento">
-                <div class="animate fade-in stagger bento_cell bento_edu">
-                    <p class="bento_label">[Education]</p>
-                    <div class="edu_entry">
-                        <p class="status_title">University of Minnesota</p>
-                        <p class="bento_desc">BASc, Software Engineering</p>
-                        <p class="edu_date">2024 - 2027 · in-progress</p>
-                    </div>
-                    <div class="edu_entry">
-                        <p class="status_title">Bethel University</p>
-                        <p class="bento_desc">Associate's degree</p>
-                        <p class="edu_date">4.0 GPA</p>
-                    </div>
-                    <div class="edu_entry">
-                        <p class="status_title">Maranatha Christian Academy</p>
-                        <p class="bento_desc">High School Diploma</p>
-                        <p class="edu_date">4.5 GPA · Salutatorian · STEAM Student of the Year</p>
-                    </div>
-                </div>
-                <div class="animate fade-in stagger bento_cell bento_stack">
-                    <p class="bento_label">[Stack]</p>
-                    <div class="bento_pills">
-                        <div class="bento_pill" style="transform: rotate(-3deg)">React</div>
-                        <div class="bento_pill" style="transform: rotate(-3deg)">Javascript</div>
-                        <div class="bento_pill" style="transform: rotate(1deg)">Tailwind</div>
-                        <div class="bento_pill" style="transform: rotate(-4deg)">React Router</div>
-                        <div class="bento_pill" style="transform: rotate(2deg)">Supabase</div>
-                        <div class="bento_pill" style="transform: rotate(-3deg)">Vercel</div>
-                        <div class="bento_pill">Git</div>
-                        <div class="bento_pill" style="transform: rotate(3deg)">Vite</div>
-                        <div class="bento_pill">Python</div>
-                        <div class="bento_pill" style="transform: rotate(3deg)">TypeScript</div>
-                        <div class="bento_pill">Webflow</div>
-                        <div class="bento_pill" style="transform: rotate(-4deg)">CSS</div>
-                        <div class="bento_pill">HTML</div>
-                    </div>
-                </div>
-                    <div class="animate fade-in stagger bento_cell bento_status">
-                        <p class="bento_label">[Availability]</p>
-                        <div class="status ">
-                             <span class="green_circle"></span>
-                            <div>
-                                <p class="status_title">Open to full-time roles</p>
-                            </div>
-                        </div>
-                       <div class="flex_row">
-                            <p class="bento_desc">Web dev ·</p>
-                            <p class="bento_desc">Available now</p>
-                        </div> 
-                </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact">
-            <a href="mailto:brianna.pischke@gmail.com" class="carousel">
-                <div class="group">
-                    <div class="carousel_item">REACH</div>
-                    <div class="carousel_item">OUT</div>
-                    <svg class="logo carousel_item"><use href="#logo-shape"/></svg>
-                    <div class="carousel_item">REACH</div>
-                    <div class="carousel_item">OUT</div>
-                    <svg class="logo carousel_item"><use href="#logo-shape"/></svg>
-                </div>
-                <div aria-hidden class="group">
-                    <div class="carousel_item">REACH</div>
-                    <div class="carousel_item">OUT</div>
-                    <svg class="logo carousel_item"><use href="#logo-shape"/></svg>
-                    <div class="carousel_item">REACH</div>
-                    <div class="carousel_item">OUT</div>
-                    <svg class="logo carousel_item"><use href="#logo-shape"/></svg>
-                </div>
-                <div aria-hidden class="group">
-                    <div class="carousel_item">REACH</div>
-                    <div class="carousel_item">OUT</div>
-                    <svg class="logo carousel_item"><use href="#logo-shape"/></svg>
-                    <div class="carousel_item">REACH</div>
-                    <div class="carousel_item">OUT</div>
-                    <svg class="logo carousel_item"><use href="#logo-shape"/></svg>
-                </div>
-            </a>
-            <div class="footer animate fade-in">
-                <div class="footer_container_middle">
-                    <div class="social_wrapper">
-                        <a class="social_link" href="https://www.linkedin.com/in/brianna-p-ba80b0282/" target="_blank"">
-                            <img src="assets/linkedin.svg" class="social_icon"/>
-                        </a>
-                        <a class="social_link" href="https://github.com/brianna-rose05" target="_blank"">
-                            <img src="assets/github.svg" class="social_icon"/>
-                        </a>
-                    </div>
-                    <div class="footer_left">
-                        <p class="animate fade-in-up footer_cta">I'm always open to new opportunities - say hello.</p>
-                        <div class="email_container btn">
-                            <a href="mailto:brianna.pischke@gmail.com">
-                                <p class="email">brianna.pischke@gmail.com</p>
-                            <div class="div"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer_bottom_grid">
-                    <div class="footer_menu_wrapper">
-                        <div class="menu_button_container">
-                            <a class="btn" href="">
-                                <p class="footer_menu_text">Home</p>
-                                <div class="div"></div>
-                            </a>
-                            <a class="btn" href="#about">
-                                <p class="footer_menu_text">About</p>
-                                <div class="div"></div>
-                            </a>
-                            <a class="btn" href="#projects">
-                                <p class="footer_menu_text">Projects</p>
-                                <div class="div"></div>
-                            </a>
-                            <a class="btn" href="#experience">
-                                <p class="footer_menu_text">Experience</p>
-                                <div class="div"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="bottom_flex">
-                        <p>© 2026 BriAnna Pischke</p>
-                </div>
-                </div>
-            </div>
-        </section>
-    </body>
+<body>
+
+
+<main id="top">
+  <nav class="nav" aria-label="Site">
+    <a href="#home" data-route="home">home</a>
+    <a href="#projects" data-route="projects">projects</a>
+    <a href="#writing" data-route="writing">writing</a>
+    <a href="#photos" data-route="photos">photos</a>
+  </nav>
+
+  <!-- HOME -->
+  <div data-page="home" style="display:flex;flex-direction:column;gap:3rem">
+    <header>
+      <h1>BriAnna Pischke</h1>
+      <p class="lede">Engineer and builder. I'm working toward a world where nobody spends their life on work they don't care about.</p>
+      <a class="portrait" href="#photos" aria-label="Portrait, opens photos"><img src="assets/black_white_headshot.jpg" alt="BriAnna Pischke" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></a>
+    </header>
+
+    <section>
+      <h2>About me</h2>
+      <p>Most people spend most of their working hours on work they don't care about. The forms, the follow-ups, the copy-paste between systems. The work they actually came to do gets whatever is left.</p>
+      <p>For the first time in history, that's fixable. AI can take the busywork off a person's plate at a scale no technology before it could. <strong>I want to build the tools that do it, so people can spend their lives on the work they care about.</strong></p>
+      <p>I didn't come up through CS. I came up through construction, and I learned this problem firsthand.</p>
+      <p>At <a href="https://www.paramountgranite.com/" target="_blank" rel="noopener">Paramount Granite</a>, I ran 50+ contractor accounts and up to 30 active jobs at once. Quotes, slab orders, installs, every status in a CRM. The craft was in the stone. The hours went to the paperwork.</p>
+      <p>So I taught myself React and TypeScript and built a <a href="https://ctop-quote.vercel.app" target="_blank" rel="noopener">countertop quoting wizard</a> that turns a hand sketch into a priced quote. Custom shapes, polygon math, AI sketch extraction. That was the moment I knew what I wanted to do with my life.</p>
+      <figure>
+        <a class="receipt" href="https://ctop-quote.vercel.app" target="_blank" rel="noopener" style="padding:0;overflow:hidden"><img src="assets/quote.png" alt="Countertop quoting wizard quote screen" style="width:100%;height:100%;object-fit:cover"></a>
+        <figcaption>The first tool I built to give someone their time back. [DATE]</figcaption>
+      </figure>
+      <p>Every project since has pulled on the same thread. <a href="#projects">CRM-Bench</a> measures whether AI agents can actually do real business work yet. <a href="https://tdfeed.com" target="_blank" rel="noopener">TDFeed</a> turns hours of keeping up with research into minutes. My job-search pipeline does the grind of finding and filling applications so I can spend my time on the ones that matter.</p>
+      <p>Today I'm leading the full website redesign at <a href="https://wallinpartners.org" target="_blank" rel="noopener">Wallin Education Partners</a>, which helps students from lower-income backgrounds get to and through college, so they can build careers they choose. Same mission, different scale.</p>
+      <p>I'm finishing my B.S. in Software Engineering at the University of Minnesota (May 2027, 4.0 GPA) and moving to San Francisco to build this full time.</p>
+      <p>I believe people should own their time. Mindset beats odds. Know thyself. AI is the lever, not the point. The point is the person using it.</p>
+      <p>My goal is simple to say and hard to do: help millions of people spend their days on work they're proud of.</p>
+    </section>
+
+    <section>
+      <h2>Now</h2>
+      <ul>
+        <li>Redesigning <a href="https://wallinpartners.org" target="_blank" rel="noopener">Wallin</a>'s site end to end: one site serving seven audiences, from students to donors.</li>
+        <li>Lead developer on PetReady, software that takes scheduling off vet clinics' plates so they can focus on the animals.</li>
+        <li>Running AI evals on what agents can really do. Next study: recursive self-improvement.</li>
+        <li>Moving to SF. If you're building tools that give people their time back, <a href="#contact">let's talk</a>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><a href="#projects">Projects</a></h2>
+      <p>I build tools for problems I actually have, then ship them. My favorites: <a href="#projects">CRM-Bench</a>, an eval of AI agents doing real Salesforce work, and <a href="https://tdfeed.com" target="_blank" rel="noopener">TDFeed</a>, the research reader I use every day.</p>
+      <figure>
+        <a class="receipt" href="#projects" style="aspect-ratio:16/9">[chart: CRM-Bench results by model]</a>
+        <figcaption>CRM-Bench results. [DATE]</figcaption>
+      </figure>
+      <p><a href="#projects">See all projects</a> · <a href="https://github.com/brianna-rose05" target="_blank" rel="noopener">GitHub</a></p>
+    </section>
+
+    <section>
+      <h2><a href="#writing">Writing</a></h2>
+      <p>I write <a href="#writing">Outside Engineer</a>, notes from someone who came into software from the outside. AI evals, what I'm building, and how to get good at hard things fast.</p>
+    </section>
+
+    <section>
+      <h2>Past endeavours</h2>
+      <ul>
+        <li><strong>Paramount Granite Co.</strong> (2024–2026). Ran events and operations for a countertop fabricator: 50+ contractor accounts, up to 30 active jobs, quote to install. Redesigned the company site plus two sister-company sites, <a href="https://www.paramountdesigncenter.com/" target="_blank" rel="noopener">Paramount Design Center</a> and <a href="https://www.latvalalumber.com/" target="_blank" rel="noopener">Latvala Lumber</a>, and ran email, Meta ads and home shows.</li>
+        <li><strong>Mustang</strong> (2021–2023). Head of Growth. Led a team of ten across 3 social platforms, made 50+ cold calls a month, ran campaigns for 20+ organizations, and closed a year-long boutique partnership.</li>
+        <li><strong>Freelance web development</strong> (4 years). Webflow, Shopify and WordPress builds for small businesses.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Origins</h2>
+      <p>I grew up in Minnesota. My first real pitch was for my high school robotics team, M-TECH: I cold-called local companies and raised $4,000 in sponsorships in two months. We used it to run robotics workshops for elementary kids.</p>
+      <p>Nobody handed me a path into tech. I cold-called, taught myself, and built my way in. I believe that's open to anyone, and I want to build the tools that make it easier.</p>
+      <p>Luck is mostly showing up again.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Say hi</h2>
+      <p>Email <span id="email">brianna.pischke@gmail.com</span> <button class="copy" type="button" id="copy">copy</button>, or find me on <a href="https://x.com/_briannarose" target="_blank" rel="noopener">X</a>.</p>
+    </section>
+  </div>
+
+  <!-- PROJECTS -->
+  <div data-page="projects" hidden style="flex-direction:column;gap:2rem">
+    <header>
+      <h1>Projects</h1>
+      <p class="lede">Things I've built, newest thinking first. Most started as a problem I had myself.</p>
+    </header>
+    <div>
+      <article class="card">
+        <h3>CRM-Bench</h3>
+        <p class="meta">AI eval · Salesforce · OpenRouter · 2026</p>
+        <p>Can AI agents actually run a CRM? I tested frontier models on real tasks in a live Salesforce Developer org, with a simulated user pushing back across multi-turn chats.</p>
+        <p><a href="#" data-todo="Substack post URL">Read the paper</a> · <a href="https://github.com/brianna-rose05/crm-agent-bench" target="_blank" rel="noopener">Code</a></p>
+      </article>
+      <article class="card">
+        <h3><a href="https://tdfeed.com" target="_blank" rel="noopener">TDFeed</a></h3>
+        <p class="meta">React · Supabase · Vercel</p>
+        <p>A research feed reader. Subscribe to sources, read in the app, save to collections. Built to track new research I write about.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://ctop-quote.vercel.app" target="_blank" rel="noopener">Countertop quoting wizard</a></h3>
+        <p class="meta">React · TypeScript · Supabase · Vercel</p>
+        <p>Room to shapes to stone to quote. SVG layout diagrams, shoelace-formula area math for custom shapes, and AI sketch extraction.</p>
+      </article>
+      <article class="card">
+        <h3>Job Finder</h3>
+        <p class="meta">Node · Playwright · Claude Haiku</p>
+        <p>My personal job-search pipeline. Pulls listings from several sources, drops reposts and stale posts, scores fit, and pre-fills applications without ever submitting. <span class="todo">link or "private"</span></p>
+      </article>
+      <article class="card">
+        <h3>Punch List</h3>
+        <p class="meta">HN Algolia API · Claude Haiku</p>
+        <p>Scans Hacker News for problems people keep complaining about and sorts them into SaaS ideas. <span class="todo">link</span></p>
+      </article>
+      <article class="card">
+        <h3><a href="https://northbridgeaccounting.dev" target="_blank" rel="noopener">Northbridge</a></h3>
+        <p class="meta">WordPress · Elementor · custom plugin</p>
+        <p>A demo accounting-firm site built to show real WordPress work end to end.</p>
+      </article>
+    </div>
+    <p><a href="https://github.com/brianna-rose05" target="_blank" rel="noopener">More on GitHub</a> · <a href="#home">Back home</a></p>
+  </div>
+
+  <!-- WRITING -->
+  <div data-page="writing" hidden style="flex-direction:column;gap:2rem">
+    <header>
+      <h1>Writing</h1>
+      <p class="lede">Outside Engineer: notes from someone who came into software from the outside.</p>
+    </header>
+    <div>
+      <article class="card">
+        <h3><a href="#" data-todo="Substack post URL">Can AI agents run a CRM?</a></h3>
+        <p class="meta">[DATE] · CRM-Bench paper</p>
+        <p>What happened when I put frontier models in a live Salesforce org with a difficult simulated user.</p>
+      </article>
+      <article class="card">
+        <h3>[Post title]</h3>
+        <p class="meta">[DATE]</p>
+        <p>[One-line summary of your next best post.]</p>
+      </article>
+    </div>
+    <p><a href="#" data-todo="Substack URL">Subscribe on Substack</a> · <a href="#home">Back home</a></p>
+  </div>
+
+  <!-- PHOTOS -->
+  <div data-page="photos" hidden style="flex-direction:column;gap:2rem">
+    <header>
+      <h1>Photos</h1>
+      <p class="lede">A few I like.</p>
+    </header>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px">
+      <div class="receipt" style="aspect-ratio:4/5">[photo]</div>
+      <div class="receipt" style="aspect-ratio:4/5">[photo]</div>
+      <div class="receipt" style="aspect-ratio:4/5">[photo]</div>
+    </div>
+    <p><a href="#home">Back home</a></p>
+  </div>
+
+  <footer>
+    <span>BriAnna Pischke</span>
+    <a href="https://x.com/_briannarose" target="_blank" rel="noopener">X</a>
+    <a href="https://github.com/brianna-rose05" target="_blank" rel="noopener">GitHub</a>
+    <a href="#" data-todo="Substack URL">Substack</a>
+    <a href="https://www.linkedin.com/in/brianna-p-ba80b0282/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#top" id="totop">Back to top</a>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var pages = ['home','projects','writing','photos'];
+  function show(){
+    var h = (location.hash || '').slice(1);
+    var route = pages.indexOf(h) >= 0 ? h : 'home';
+    var anchor = (h && pages.indexOf(h) < 0) ? h : null;
+    document.querySelectorAll('[data-page]').forEach(function(el){
+      var on = el.getAttribute('data-page') === route;
+      el.hidden = !on;
+      el.style.display = on ? 'flex' : '';
+    });
+    document.querySelectorAll('[data-route]').forEach(function(a){
+      if (a.getAttribute('data-route') === route) a.setAttribute('aria-current','page');
+      else a.removeAttribute('aria-current');
+    });
+    if (anchor) { var t = document.getElementById(anchor); if (t) { t.scrollIntoView({behavior:'smooth'}); return; } }
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange', show);
+  show();
+
+  // Placeholder links: show what's missing instead of going nowhere
+  document.querySelectorAll('a[data-todo]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var orig = a.textContent;
+      a.textContent = 'needs ' + a.getAttribute('data-todo');
+      setTimeout(function(){ a.textContent = orig; }, 1600);
+    });
+  });
+
+  document.getElementById('totop').addEventListener('click', function(e){
+    e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  var btn = document.getElementById('copy');
+  btn.addEventListener('click', function(){
+    var text = document.getElementById('email').textContent;
+    var done = function(){ btn.textContent = 'copied'; setTimeout(function(){ btn.textContent = 'copy'; }, 1400); };
+    try {
+      navigator.clipboard.writeText(text).then(done, function(){ selectEmail(); });
+    } catch(err){ selectEmail(); }
+  });
+  function selectEmail(){
+    var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+})();
+</script>
+
+</body>
 </html>
