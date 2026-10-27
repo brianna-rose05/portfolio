@@ -7,7 +7,6 @@
     document.querySelectorAll('[data-page]').forEach(function(el){
       var on = el.getAttribute('data-page') === route;
       el.hidden = !on;
-      el.style.display = on ? 'flex' : '';
     });
     document.querySelectorAll('[data-route]').forEach(function(a){
       if (a.getAttribute('data-route') === route) a.setAttribute('aria-current','page');
