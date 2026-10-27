@@ -1,7 +1,7 @@
 /* Layout: one 640px reading column, hash-routed pages (home / projects / writing), Sigil-style */
 :root{
   /* Outside Engineer Substack theme colors */
-  --bg:#FAFAFA; --fg:#363737; --muted:#828383; --soft:#363737;
+  --bg:#FDFDFD; --fg:#363737; --muted:#828383; --soft:#363737;
   --line:#DDDDDD; --fill:#F0F0F0; --link:#1B263B; --link-hover:#131B2A;
   --serif:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --mono:'IBM Plex Mono', ui-monospace, Menlo, monospace;
@@ -34,8 +34,9 @@ strong{font-weight:600}
     width:160px;flex-direction:column;flex-wrap:nowrap;gap:.6rem;font-size:.95rem}
   .nav-name{display:block;font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--fg)!important;margin-bottom:.5rem;letter-spacing:0}
 }
-.portrait{width:168px;height:168px;border-radius:50%;background:var(--fill);border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.75rem;color:var(--muted);text-decoration:none}
+.intro{display:flex;align-items:center;gap:1rem}
+.portrait{flex:none;width:64px;height:64px;border-radius:50%;overflow:hidden;background:var(--fill);border:1px solid var(--line);display:block}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover}
 figure{margin:.25rem 0;display:flex;flex-direction:column;gap:.5rem}
 .receipt{width:100%;max-width:100%;aspect-ratio:16/10;background:var(--fill);border:1px solid var(--line);border-radius:6px;
   display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;box-sizing:border-box;
