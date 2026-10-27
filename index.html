@@ -21,7 +21,7 @@
   </nav>
 
   <!-- HOME -->
-  <div data-page="home" style="display:flex;flex-direction:column;gap:3rem">
+  <div data-page="home" style="display:flex;flex-direction:column;gap:2.5rem">
     <header>
       <h1>BriAnna Pischke</h1>
       <p class="lede">Engineer and builder. I'm working toward a world where nobody spends their life on work they don't care about.</p>
@@ -36,12 +36,12 @@
       <p>At <a href="https://www.paramountgranite.com/" target="_blank" rel="noopener">Paramount Granite</a>, I ran 50+ contractor accounts and up to 30 active jobs at once. Quotes, slab orders, installs, every status in a CRM. The craft was in the stone. The hours went to the paperwork.</p>
       <p>So I taught myself React and TypeScript and built a <a href="https://ctop-quote.vercel.app" target="_blank" rel="noopener">countertop quoting wizard</a> that turns a hand sketch into a priced quote. Custom shapes, polygon math, AI sketch extraction. That was the moment I knew what I wanted to do with my life.</p>
       <figure>
-        <a class="receipt" href="https://ctop-quote.vercel.app" target="_blank" rel="noopener" style="padding:0;overflow:hidden"><img src="assets/quote.png" alt="Countertop quoting wizard quote screen" style="width:100%;height:100%;object-fit:cover"></a>
+        <a class="receipt shot" href="https://ctop-quote.vercel.app" target="_blank" rel="noopener"><img src="assets/quote.png" alt="Countertop quoting wizard quote screen"></a>
         <figcaption>The first tool I built to give someone their time back. [DATE]</figcaption>
       </figure>
       <p>Every project since has pulled on the same thread. <a href="#projects">CRM-Bench</a> measures whether AI agents can actually do real business work yet. <a href="https://tdfeed.com" target="_blank" rel="noopener">TDFeed</a> turns hours of keeping up with research into minutes. My job-search pipeline does the grind of finding and filling applications so I can spend my time on the ones that matter.</p>
       <p>Today I'm leading the full website redesign at <a href="https://wallinpartners.org" target="_blank" rel="noopener">Wallin Education Partners</a>, which helps students from lower-income backgrounds get to and through college, so they can build careers they choose. Same mission, different scale.</p>
-      <p>I'm finishing my B.S. in Software Engineering at the University of Minnesota (May 2027, 4.0 GPA) and moving to San Francisco to build this full time.</p>
+      <p>I'm finishing my B.S. in Software Engineering at the University of Minnesota (May 2027, 4.0 GPA) and I just moved to San Francisco to build this full time.</p>
       <p>I believe people should own their time. Mindset beats odds. Know thyself. AI is the lever, not the point. The point is the person using it.</p>
       <p>My goal is simple to say and hard to do: help millions of people spend their days on work they're proud of.</p>
     </section>
@@ -50,25 +50,20 @@
       <h2>Now</h2>
       <ul>
         <li>Redesigning <a href="https://wallinpartners.org" target="_blank" rel="noopener">Wallin</a>'s site end to end: one site serving seven audiences, from students to donors.</li>
-        <li>Lead developer on PetReady, software that takes scheduling off vet clinics' plates so they can focus on the animals.</li>
         <li>Running AI evals on what agents can really do. Next study: recursive self-improvement.</li>
-        <li>Moving to SF. If you're building tools that give people their time back, <a href="#contact">let's talk</a>.</li>
+        <li>New to SF. If you're building tools that give people their time back, <a href="#contact">let's talk</a>.</li>
       </ul>
     </section>
 
     <section>
       <h2><a href="#projects">Projects</a></h2>
       <p>I build tools for problems I actually have, then ship them. My favorites: <a href="#projects">CRM-Bench</a>, an eval of AI agents doing real Salesforce work, and <a href="https://tdfeed.com" target="_blank" rel="noopener">TDFeed</a>, the research reader I use every day.</p>
-      <figure>
-        <a class="receipt" href="#projects" style="aspect-ratio:16/9">[chart: CRM-Bench results by model]</a>
-        <figcaption>CRM-Bench results. [DATE]</figcaption>
-      </figure>
       <p><a href="#projects">See all projects</a> · <a href="https://github.com/brianna-rose05" target="_blank" rel="noopener">GitHub</a></p>
     </section>
 
     <section>
       <h2><a href="#writing">Writing</a></h2>
-      <p>I write <a href="#writing">Outside Engineer</a>, notes from someone who came into software from the outside. AI evals, what I'm building, and how to get good at hard things fast.</p>
+      <p>I write <a href="https://outsideengineer.substack.com/" target="_blank" rel="noopener">Outside Engineer</a>: real-world software concepts, decoded. Latest: <a href="https://outsideengineer.substack.com/p/evaluating-ai-agents-on-salesforce" target="_blank" rel="noopener">how five AI models handle real Salesforce work</a>.</p>
     </section>
 
     <section>
@@ -104,7 +99,7 @@
         <h3>CRM-Bench</h3>
         <p class="meta">AI eval · Salesforce · OpenRouter · 2026</p>
         <p>Can AI agents actually run a CRM? I tested frontier models on real tasks in a live Salesforce Developer org, with a simulated user pushing back across multi-turn chats.</p>
-        <p><a href="#" data-todo="Substack post URL">Read the paper</a> · <a href="https://github.com/brianna-rose05/crm-agent-bench" target="_blank" rel="noopener">Code</a></p>
+        <p><a href="https://outsideengineer.substack.com/p/evaluating-ai-agents-on-salesforce" target="_blank" rel="noopener">Read the paper</a> · <a href="https://github.com/brianna-rose05/crm-agent-bench" target="_blank" rel="noopener">Code</a></p>
       </article>
       <article class="card">
         <h3><a href="https://tdfeed.com" target="_blank" rel="noopener">TDFeed</a></h3>
@@ -139,21 +134,24 @@
   <div data-page="writing" hidden style="flex-direction:column;gap:2rem">
     <header>
       <h1>Writing</h1>
-      <p class="lede">Outside Engineer: notes from someone who came into software from the outside.</p>
+      <p class="lede">Outside Engineer: real-world software concepts, decoded.</p>
     </header>
     <div>
       <article class="card">
-        <h3><a href="#" data-todo="Substack post URL">Can AI agents run a CRM?</a></h3>
-        <p class="meta">[DATE] · CRM-Bench paper</p>
-        <p>What happened when I put frontier models in a live Salesforce org with a difficult simulated user.</p>
+        <h3><a href="https://outsideengineer.substack.com/p/evaluating-ai-agents-on-salesforce" target="_blank" rel="noopener">Evaluating AI Agents on Salesforce CRM Tasks</a></h3>
+        <p class="meta">Oct 2026 · CRM-Bench paper</p>
+        <p>Accuracy, cost and self-verification across five models working in a live Salesforce org.</p>
       </article>
       <article class="card">
-        <h3>[Post title]</h3>
-        <p class="meta">[DATE]</p>
-        <p>[One-line summary of your next best post.]</p>
+        <h3><a href="https://outsideengineer.substack.com/p/dispatch-2-ai-is-not-a-value-neutral" target="_blank" rel="noopener">Dispatch #2: AI Is Not a Value-Neutral Calculator</a></h3>
+        <p class="meta">Oct 6, 2025</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://outsideengineer.substack.com/p/dispatch-1-modern-ai-legacy-web" target="_blank" rel="noopener">Dispatch #1: Modern AI, Legacy Web</a></h3>
+        <p class="meta">Aug 9, 2025</p>
       </article>
     </div>
-    <p><a href="#" data-todo="Substack URL">Subscribe on Substack</a> · <a href="#home">Back home</a></p>
+    <p><a href="https://outsideengineer.substack.com/" target="_blank" rel="noopener">Subscribe on Substack</a> · <a href="#home">Back home</a></p>
   </div>
 
   <!-- PHOTOS -->
@@ -174,7 +172,7 @@
     <span>BriAnna Pischke</span>
     <a href="https://x.com/_briannarose" target="_blank" rel="noopener">X</a>
     <a href="https://github.com/brianna-rose05" target="_blank" rel="noopener">GitHub</a>
-    <a href="#" data-todo="Substack URL">Substack</a>
+    <a href="https://outsideengineer.substack.com/" target="_blank" rel="noopener">Substack</a>
     <a href="https://www.linkedin.com/in/brianna-p-ba80b0282/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="#top" id="totop">Back to top</a>
   </footer>
