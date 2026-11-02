@@ -1,5 +1,5 @@
 (function(){
-  var pages = ['home','projects','writing','photos'];
+  var pages = ['home','research','projects','writing','photos'];
   function show(){
     var h = (location.hash || '').slice(1);
     var route = pages.indexOf(h) >= 0 ? h : 'home';
