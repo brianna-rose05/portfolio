@@ -50,14 +50,14 @@
       </figure>
       <p>Building Apex showed me what I want to do with my life. <strong>I build tools that take the busywork off people's plates, so they can spend their time on the work they actually care about.</strong></p>
       <p>When I say "the work people care about," I don't mean squeezing more output out of every hour. This isn't about productivity, or about what the world would call a good use of time. I mean the things that give people energy, passion, and warmth: the craft they love, the people they want to show up for, the ideas they can't stop thinking about. Some of that looks productive. A lot of it doesn't. All of it deserves more of someone's life than the paperwork does.</p>
-      <p>That's why I research AI. It's the biggest lever we've ever had for giving people their time back, so I want to know exactly where it works and where it quietly fails. In <a href="https://zenodo.org/records/23895152" target="_blank" rel="noopener">my first study</a>, I put five frontier models to work on 50 real tasks in a live Salesforce org. In <a href="https://zenodo.org/records/23895165" target="_blank" rel="noopener">my latest</a>, Claude, ChatGPT and DeepSeek confirmed changes that never happened in 4 out of 5 attempts, and turning up their reasoning effort didn't help. If AI is going to carry people's busywork, it has to be trustworthy. That's the gap I study.</p>
+      <p>That's why I research AI. It's the biggest lever we've ever had for giving people their time back, so I want to know exactly where it works and where it quietly fails. In <a href="https://zenodo.org/records/23895152" target="_blank" rel="noopener">my first study</a>, I put five frontier models to work on 50 real tasks in a live Salesforce org. In <a href="https://zenodo.org/records/23895165" target="_blank" rel="noopener">my latest</a>, Claude, GPT and DeepSeek confirmed changes that never happened in 4 out of 5 attempts, and turning up their reasoning effort didn't help. If AI is going to carry people's busywork, it has to be trustworthy. That's the gap I study.</p>
       <p>I'm finishing my B.S. in Software Engineering at the University of Minnesota (May 2027, 4.0 GPA), and I just moved to San Francisco to build this full time.</p>
       <p>My goal is simple to say and hard to do: help millions of people spend more of their days on what gives them energy, passion, and warmth.</p>
     </section>
 
     <section>
       <h2><a href="#research">Research</a></h2>
-      <p>Most students never publish a research paper without a university or lab behind them. I've published two: independent, reproducible end to end, each with a real DOI.</p>
+      <p>I build test environments that check what AI agents actually do, not what they say they did. Each study below is independent, has a DOI, and is fully reproducible: code, transcripts and grading are public.</p>
       <ul>
         <li><a href="https://zenodo.org/records/23895165" target="_blank" rel="noopener">Thinking Harder Doesn&#8217;t Help AI Catch Silent Failures</a> (2026). <a href="papers/Pischke_2026_Thinking_Harder_Doesnt_Help_AI_Catch_Silent_Failures.pdf" target="_blank" rel="noopener">PDF</a> · <a href="https://doi.org/10.5281/zenodo.23895165" target="_blank" rel="noopener">DOI</a> · <a href="https://github.com/brianna-rose05/thinking-harder-silent-failures" target="_blank" rel="noopener">Code</a></li>
         <li><a href="https://zenodo.org/records/23895152" target="_blank" rel="noopener">Do AI Agents Check Their Work? A Comparative Evaluation of Five Models on Salesforce CRM Tasks</a> (2026). <a href="papers/Pischke_2026_Do_AI_Agents_Check_Their_Work.pdf" target="_blank" rel="noopener">PDF</a> · <a href="https://doi.org/10.5281/zenodo.23895152" target="_blank" rel="noopener">DOI</a> · <a href="https://github.com/brianna-rose05/crm-agent-bench" target="_blank" rel="noopener">Code</a></li>
@@ -106,25 +106,22 @@
   <div data-page="research" class="page" hidden>
     <header>
       <h1>Research</h1>
-      <p class="lede">Most students never publish a research paper without a university or lab behind them. I've published two: independent, reproducible end to end, each with a real DOI.</p>
+      <p class="lede">I build test environments that check what AI agents actually do, not what they say they did. Each study below is independent, has a DOI, and is fully reproducible: code, transcripts and grading are public.</p>
     </header>
     <div>
       <article class="card">
         <h3><a href="https://zenodo.org/records/23895165" target="_blank" rel="noopener">Thinking Harder Doesn&#8217;t Help AI Catch Silent Failures</a></h3>
-        <p class="meta">BriAnna Pischke · 2026 · DOI <a href="https://doi.org/10.5281/zenodo.23895165" target="_blank" rel="noopener">10.5281/zenodo.23895165</a></p>
-        <p>I rigged a database save to report success while changing nothing, then watched whether AI agents noticed. They didn't. Across 120 attempts on τ-bench airline tasks, Claude, ChatGPT and DeepSeek confirmed changes that never happened in 4 out of 5 tries. Making them think harder didn't help.</p>
+        <p class="meta">BriAnna Pischke · 2026 · Preprint · DOI <a href="https://doi.org/10.5281/zenodo.23895165" target="_blank" rel="noopener">10.5281/zenodo.23895165</a></p>
+        <p>I rigged a database save to report success while changing nothing, then watched whether AI agents noticed. They didn't. Across 120 attempts on τ-bench airline tasks, Claude, GPT and DeepSeek confirmed changes that never happened in 4 out of 5 tries. Making them think harder didn't help.</p>
+        <p><strong>Built:</strong> a fault-injection layer for τ-bench, a database-state grader, and statistical analysis (McNemar, Wilson intervals).</p>
         <p><a href="papers/Pischke_2026_Thinking_Harder_Doesnt_Help_AI_Catch_Silent_Failures.pdf" target="_blank" rel="noopener">PDF</a> · <a href="https://zenodo.org/records/23895165" target="_blank" rel="noopener">Zenodo</a> · <a href="https://github.com/brianna-rose05/thinking-harder-silent-failures" target="_blank" rel="noopener">Code</a></p>
       </article>
       <article class="card">
         <h3><a href="https://zenodo.org/records/23895152" target="_blank" rel="noopener">Do AI Agents Check Their Work? A Comparative Evaluation of Five Models on Salesforce CRM Tasks</a></h3>
-        <p class="meta">BriAnna Pischke · 2026 · DOI <a href="https://doi.org/10.5281/zenodo.23895152" target="_blank" rel="noopener">10.5281/zenodo.23895152</a></p>
+        <p class="meta">BriAnna Pischke · 2026 · Preprint · DOI <a href="https://doi.org/10.5281/zenodo.23895152" target="_blank" rel="noopener">10.5281/zenodo.23895152</a></p>
         <p>I built a fictional company inside a real Salesforce org, planted traps in its data, and handed five frontier models 50 CRM tasks, with a simulated user pushing back along the way. Then I checked whether they checked their own work, and what each answer cost.</p>
+        <p><strong>Built:</strong> a 50-task, 5-level benchmark on the Salesforce REST API, with a simulated multi-turn user, a fault layer for broken tools, and graders tested against scripted agents.</p>
         <p><a href="papers/Pischke_2026_Do_AI_Agents_Check_Their_Work.pdf" target="_blank" rel="noopener">PDF</a> · <a href="https://zenodo.org/records/23895152" target="_blank" rel="noopener">Zenodo</a> · <a href="https://github.com/brianna-rose05/crm-agent-bench" target="_blank" rel="noopener">Code</a></p>
-      </article>
-      <article class="card">
-        <h3>Did Using AI Win People Over?</h3>
-        <p class="meta">In progress · 2022–2026</p>
-        <p>Next question: did using AI actually win people over? I'm lining up public sentiment against where the research really stood, every year from 2022 to 2026, and against how people felt about the early internet and smartphones at the same stage.</p>
       </article>
     </div>
     <p><a href="https://outsideengineer.substack.com/" target="_blank" rel="noopener">Subscribe on Substack</a> · <a href="#home">Back home</a></p>
@@ -177,7 +174,7 @@
       <article class="card">
         <h3><a href="https://outsideengineer.substack.com/p/thinking-harder-doesnt-help-ai-catch" target="_blank" rel="noopener">Thinking Harder Doesn't Help AI Catch Silent Failures</a></h3>
         <p class="meta">Oct 30, 2026 · Research paper</p>
-        <p>Claude, ChatGPT and DeepSeek confirmed changes that never happened in 4 out of 5 attempts, and turning up reasoning effort didn't change that.</p>
+        <p>Claude, GPT and DeepSeek confirmed changes that never happened in 4 out of 5 attempts, and turning up reasoning effort didn't change that.</p>
       </article>
       <article class="card">
         <h3><a href="https://outsideengineer.substack.com/p/evaluating-ai-agents-on-salesforce" target="_blank" rel="noopener">Evaluating AI Agents on Salesforce CRM Tasks</a></h3>
