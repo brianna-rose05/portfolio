@@ -22,7 +22,7 @@
     </div>
     <div class="nav-links">
       <a href="#home" data-route="home">About</a>
-      <a href="https://www.apexquoting.com/" target="_blank" rel="noopener">Apex</a>
+      <a href="#apex" data-route="apex">Apex</a>
       <a href="#research" data-route="research">Research</a>
       <a href="#projects" data-route="projects">Projects</a>
       <a href="#writing" data-route="writing">Writing</a>
@@ -35,7 +35,7 @@
     <header>
       <a class="portrait portrait-mobile" href="#photos" aria-label="Portrait, opens photos"><img src="assets/black_white_headshot.jpg" alt="BriAnna Pischke"></a>
       <h1>BriAnna Pischke</h1>
-      <p class="lede">AI researcher and founder of <a href="https://www.apexquoting.com/" target="_blank" rel="noopener">Apex</a>. I build tools that give people their time back for the work they care about.</p>
+      <p class="lede">AI researcher and founder of <a href="#apex">Apex</a>. I build tools that give people their time back for the work they care about.</p>
     </header>
 
     <section>
@@ -43,7 +43,7 @@
       <p>I didn't come up through CS. I came up through construction.</p>
       <p>At <a href="https://www.paramountgranite.com/" target="_blank" rel="noopener">Paramount Granite</a>, I ran 50+ contractor accounts and up to 30 active jobs at once: quotes, slab and sink orders, installs, every status tracked in a CRM. I also ran marketing, rebuilt the company's website and two sister-company sites, and worked the home shows. I was good at the job. But most of my day went to the work around the work. The craft was in the stone. The hours went to the paperwork.</p>
       <p>Nobody was going to fix that for me, so I learned how to fix it myself. I taught myself React and TypeScript and built a tool that turns a hand sketch into a priced countertop quote, right at the sales desk.</p>
-      <p>That tool became <a href="https://www.apexquoting.com/" target="_blank" rel="noopener">Apex</a>, my company. Apex gives stone fabricators instant, accurate quoting on their own websites: a guided eight-step flow, 700+ stones, custom layouts priced to the hundredth of a square foot, and pricing that stays private on the server. A quote that used to take days now takes minutes. Today Apex does <strong>$10K in monthly recurring revenue</strong>.</p>
+      <p>That tool became <a href="#apex">Apex</a>, my company. Apex gives stone fabricators instant, accurate quoting on their own websites: a guided eight-step flow, 700+ stones, custom layouts priced to the hundredth of a square foot, and pricing that stays private on the server. A quote that used to take days now takes minutes. Today Apex does <strong>$10K in monthly recurring revenue</strong>.</p>
       <figure>
         <a class="receipt shot" href="https://ctop-quote.vercel.app/" target="_blank" rel="noopener"><img src="assets/quote.png" alt="Apex quote screen showing a kitchen countertop estimate"></a>
         <figcaption>Apex: countertop quotes in minutes, not days. <a href="https://ctop-quote.vercel.app/" target="_blank" rel="noopener">Try the live demo</a>.</figcaption>
@@ -67,7 +67,7 @@
     <section>
       <h2>Now</h2>
       <ul>
-        <li>Growing <a href="https://www.apexquoting.com/" target="_blank" rel="noopener">Apex</a>.</li>
+        <li>Growing <a href="#apex">Apex</a>.</li>
         <li>Working on my third study: did using AI actually win people over? I'm comparing public sentiment with where the research stood, year by year from 2022 to 2026.</li>
         <li>Building a tool that plans a software project end to end and runs a team of AI coding agents in parallel.</li>
         <li>Redesigning <a href="https://wallinpartners.org" target="_blank" rel="noopener">Wallin Education Partners</a>' website, one site for seven audiences.</li>
@@ -100,6 +100,51 @@
       <h2>Say hi</h2>
       <p>Email <span id="email">brianna.pischke@gmail.com</span> <button class="copy" type="button" id="copy">copy</button>, or find me on <a href="https://x.com/_briannarose" target="_blank" rel="noopener">X</a>.</p>
     </section>
+  </div>
+
+  <!-- APEX -->
+  <div data-page="apex" class="page" hidden>
+    <header>
+      <h1>Apex</h1>
+      <p class="lede">Instant, accurate quoting for countertop fabricators. I'm the founder and the engineer.</p>
+    </header>
+    <figure>
+      <video class="demo" src="assets/apex-demo.mp4" poster="assets/apex-demo-poster.jpg" controls muted playsinline preload="metadata"></video>
+      <figcaption>A full kitchen quote, start to finish: layout, measurements, edges, sink, tear-out, stone, price.</figcaption>
+    </figure>
+    <p><strong>$10K in monthly recurring revenue.</strong> Stone fabricators put Apex on their own websites so homeowners can get a real price in minutes, and the shop gets a qualified lead with every detail already filled in.</p>
+    <p><a href="https://www.apexquoting.com/" target="_blank" rel="noopener">apexquoting.com</a> · <a href="https://ctop-quote.vercel.app/" target="_blank" rel="noopener">Try the live demo</a></p>
+
+    <section>
+      <h2>Why I built it</h2>
+      <p>Apex started at the sales desk of a stone fabrication shop, not in a boardroom. I was the one quoting: sketches, spreadsheets, follow-up calls, and days of back-and-forth before a homeowner saw a number. So I taught myself React and TypeScript and built the tool I wished I had. Then other shops wanted it too.</p>
+    </section>
+
+    <section>
+      <h2>How it works</h2>
+      <ol>
+        <li><strong>Space and layout.</strong> Kitchen, vanity or bar, then straight, galley, L, U, island, or a custom shape drawn on a canvas.</li>
+        <li><strong>Measurements.</strong> One edge at a time on a live top-view diagram, with dimensions auto-filled where the geometry allows.</li>
+        <li><strong>Edges and backsplash.</strong> Mark each edge exposed or against a wall, pick a backsplash, then an edge profile.</li>
+        <li><strong>Sinks and cutouts.</strong> Choose sinks from the shop's catalog or bring your own, plus cooktops and ranges.</li>
+        <li><strong>Tear-out.</strong> Removal and disposal of the old counters, priced by material and size.</li>
+        <li><strong>Stone.</strong> Browse 700+ stones by color and price tier, and compare up to three.</li>
+        <li><strong>Quote.</strong> An itemized estimate in seconds, emailed to the homeowner and sent to the shop as a new lead.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Under the hood</h2>
+      <ul>
+        <li>Square footage for any polygon, calculated with the shoelace formula to the hundredth of a square foot.</li>
+        <li>Pricing runs on the server, so customers see the estimate and never the shop's rates or markup.</li>
+        <li>Sketch tracing: upload a hand drawing and trace the layout over it.</li>
+        <li>Embeds on the shop's own domain, with their logo and colors.</li>
+        <li>Built with React, TypeScript, Supabase, Vercel serverless functions and Resend.</li>
+      </ul>
+    </section>
+
+    <p><a href="https://www.apexquoting.com/" target="_blank" rel="noopener">Visit apexquoting.com</a> · <a href="#home">Back home</a></p>
   </div>
 
   <!-- RESEARCH -->
@@ -135,7 +180,7 @@
     </header>
     <div>
       <article class="card">
-        <h3><a href="https://www.apexquoting.com/" target="_blank" rel="noopener">Apex</a></h3>
+        <h3><a href="#apex">Apex</a></h3>
         <p class="meta">Founder · $10K MRR · React · TypeScript · Supabase · Vercel</p>
         <p>Instant, accurate quoting for countertop fabricators, on their own websites. A guided eight-step flow, 700+ stones, custom polygon layouts priced with the shoelace formula, private server-side pricing, and AI sketch tracing.</p>
         <p><a href="https://www.apexquoting.com/" target="_blank" rel="noopener">apexquoting.com</a> · <a href="https://ctop-quote.vercel.app/" target="_blank" rel="noopener">Live demo</a></p>
