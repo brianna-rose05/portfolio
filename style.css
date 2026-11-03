@@ -171,3 +171,12 @@ ol{padding-left:1.4rem}
   box-shadow:0 14px 36px rgba(0,0,0,.18);background:#fff;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease;z-index:50}
 .site-preview.on{opacity:1;transform:translateY(0)}
 .site-preview.full{width:240px;height:auto;object-fit:contain}
+
+/* ---------- Apex screenshot bento ---------- */
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;margin:0 0 .75rem}
+.shot{margin:0}
+.shot.wide{grid-column:1 / -1}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+.shot figcaption{margin-top:.5rem;font-size:.85rem;color:var(--soft);line-height:1.4}
+.shots-cta{font-size:.9rem;color:var(--soft)}
+@media (max-width:520px){.shots{grid-template-columns:1fr}}
