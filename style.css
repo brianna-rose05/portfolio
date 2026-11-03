@@ -165,3 +165,8 @@ ol{padding-left:1.4rem}
 .peek:hover .peek-ico,.peek:focus .peek-ico{fill:var(--link)}
 .peek[aria-label="Reddit stats"]{text-decoration:none}
 .peek img.land{width:320px}
+
+/* ---------- Project link site previews ---------- */
+.site-preview{position:absolute;left:0;top:0;width:360px;height:225px;object-fit:cover;object-position:top;border:1px solid var(--line);border-radius:8px;
+  box-shadow:0 14px 36px rgba(0,0,0,.18);background:#fff;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease;z-index:50}
+.site-preview.on{opacity:1;transform:translateY(0)}

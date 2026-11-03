@@ -44,4 +44,24 @@
     var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
     var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
   }
+
+  // Site previews: hovering a link with data-preview pops up a screenshot of that site
+  var pv = document.createElement('img');
+  pv.className = 'site-preview'; pv.alt = ''; pv.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(pv);
+  var canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
+  if (canHover) {
+    document.querySelectorAll('a[data-preview]').forEach(function(a){
+      a.addEventListener('mouseenter', function(){
+        pv.src = a.getAttribute('data-preview');
+        var r = a.getBoundingClientRect(), w = 360, h = 225;
+        var left = Math.min(Math.max(8, r.left), window.innerWidth - w - 8);
+        var top = r.top - h - 10 < 8 ? r.bottom + 10 : r.top - h - 10;
+        pv.style.left = (left + window.scrollX) + 'px';
+        pv.style.top = (top + window.scrollY) + 'px';
+        pv.classList.add('on');
+      });
+      a.addEventListener('mouseleave', function(){ pv.classList.remove('on'); });
+    });
+  }
 })();
