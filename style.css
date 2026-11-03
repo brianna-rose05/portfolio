@@ -34,7 +34,7 @@ main{max-width:720px;margin:0 auto}
   main{
     max-width:1060px;display:grid;
     grid-template-columns:180px minmax(0,640px);
-    column-gap:70px;
+    column-gap:90px;
     justify-content:center;align-items:start;
   }
   .nav{position:sticky;top:56px;grid-column:1;grid-row:1 / span 2}
