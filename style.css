@@ -74,7 +74,7 @@ h2 a:hover,h3 a:hover{color:var(--link-hover)}
 .nav-links{display:flex;flex-wrap:wrap;gap:6px 16px}
 .socials{display:flex;align-items:center;gap:1rem;margin-bottom:.75rem}
 .socials a{display:flex;color:var(--muted)}
-.socials a:hover{color:var(--link)}
+.socials a:hover{color:#2b2b2b}
 .socials svg{width:18px;height:18px;fill:currentColor}
 
 @media (min-width:900px){
@@ -123,9 +123,9 @@ ol{padding-left:1.4rem}
 
 /* ---------- Hover photo peek ---------- */
 .peek{position:relative;color:inherit;text-decoration-line:underline;text-decoration-style:dotted;text-decoration-color:#5f6b7d;text-decoration-thickness:1.5px;text-underline-offset:3px;cursor:pointer;outline:none}
-.peek img{position:absolute;left:50%;bottom:calc(100% + 10px);width:220px;max-width:70vw;height:auto;border-radius:8px;
-  box-shadow:0 12px 32px rgba(0,0,0,.18);opacity:0;pointer-events:none;transform:translate(-50%,6px);transition:opacity .18s ease,transform .18s ease;z-index:20}
-.peek:hover img,.peek:focus img{opacity:1;transform:translate(-50%,0)}
+.peek img{position:fixed;left:8px;top:8px;width:220px;max-width:calc(100vw - 16px);height:auto;border-radius:8px;
+  box-shadow:0 12px 32px rgba(0,0,0,.18);opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease;z-index:20}
+.peek:hover img,.peek:focus img{opacity:1;transform:none}
 
 /* ---------- Apex: animated shoelace walkthrough ---------- */
 .apex-math{margin:0 0 1.5rem}
@@ -167,7 +167,7 @@ ol{padding-left:1.4rem}
 .peek img.land{width:320px}
 
 /* ---------- Project link site previews ---------- */
-.site-preview{position:absolute;left:0;top:0;width:360px;height:225px;object-fit:cover;object-position:top;border:1px solid var(--line);border-radius:8px;
+.site-preview{position:fixed;left:0;top:0;width:360px;max-width:calc(100vw - 16px);height:225px;object-fit:cover;object-position:top;border:1px solid var(--line);border-radius:8px;
   box-shadow:0 14px 36px rgba(0,0,0,.18);background:#fff;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease;z-index:50}
 .site-preview.on{opacity:1;transform:translateY(0)}
 .site-preview.full{width:240px;height:auto;object-fit:contain}
@@ -177,10 +177,10 @@ ol{padding-left:1.4rem}
 .peek img.review{width:380px;background:#fff;border:1px solid var(--line)}
 
 /* Text card shown on hover (endorsements) */
-.peek .pc{position:absolute;left:50%;bottom:calc(100% + 10px);width:380px;max-width:86vw;padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:8px;
-  box-shadow:0 12px 32px rgba(0,0,0,.14);opacity:0;pointer-events:none;transform:translate(-50%,6px);transition:opacity .18s ease,transform .18s ease;z-index:20;
+.peek .pc{position:fixed;left:8px;top:8px;width:380px;max-width:calc(100vw - 16px);padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:8px;
+  box-shadow:0 12px 32px rgba(0,0,0,.14);opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease;z-index:20;
   display:block;color:var(--fg);cursor:default;text-align:left}
-.peek:hover .pc,.peek:focus .pc{opacity:1;transform:translate(-50%,0)}
+.peek:hover .pc,.peek:focus .pc{opacity:1;transform:none}
 .pc-h{display:flex;align-items:center;gap:10px;margin-bottom:8px}
 .pc-av{flex:none;width:30px;height:30px;border-radius:50%;background:#E3E6EB;color:#5A606A;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center}
 .pc-n{display:block;font-weight:700;font-size:.82rem;color:var(--heading);line-height:1.3}
@@ -207,3 +207,7 @@ details.feedback > summary::after{content:"";width:.4rem;height:.4rem;border-rig
 details.feedback[open] > summary::after{transform:rotate(45deg) translate(-1px,-1px)}
 details.feedback > summary:hover{color:var(--fg)}
 details.feedback[open] > summary{margin-bottom:.85rem}
+
+/* Never allow sideways scrolling on small screens */
+html,body{overflow-x:clip}
+.footer-dot{color:var(--soft)}

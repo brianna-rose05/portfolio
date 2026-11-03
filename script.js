@@ -56,13 +56,13 @@
         var full = a.hasAttribute('data-preview-full');
         pv.classList.toggle('full', full);
         var place = function(){
-          var r = a.getBoundingClientRect(), w = +(a.getAttribute('data-preview-w') || (full ? 240 : 360));
+          var r = a.getBoundingClientRect(), w = Math.min(+(a.getAttribute('data-preview-w') || (full ? 240 : 360)), window.innerWidth - 16);
           pv.style.width = w + 'px';
           var h = full && pv.naturalWidth ? Math.round(w * pv.naturalHeight / pv.naturalWidth) : 225;
           var left = Math.min(Math.max(8, r.left), window.innerWidth - w - 8);
           var top = r.top - h - 10 < 8 ? r.bottom + 10 : r.top - h - 10;
-          pv.style.left = (left + window.scrollX) + 'px';
-          pv.style.top = (top + window.scrollY) + 'px';
+          pv.style.left = left + 'px';
+          pv.style.top = top + 'px';
         };
         pv.onload = place;
         pv.src = a.getAttribute('data-preview');
