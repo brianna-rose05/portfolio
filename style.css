@@ -198,3 +198,12 @@ ol{padding-left:1.4rem}
 .feedback-label{margin:0 0 .85rem;font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--soft)}
 .feedback .reddit-embed-bq{margin:0 0 12px;padding:.6rem .9rem;border:1px solid var(--line);border-radius:8px;font-size:.85rem}
 .feedback iframe{display:block;width:100%;max-width:100%;margin:0 0 12px!important;border:0}
+
+/* Collapsible discussion highlights (Research) */
+details.feedback{margin:0 0 1.25rem}
+details.feedback > summary{display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;list-style:none;margin:0;user-select:none}
+details.feedback > summary::-webkit-details-marker{display:none}
+details.feedback > summary::after{content:"";width:.4rem;height:.4rem;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);transition:transform .15s ease;margin-left:.1rem}
+details.feedback[open] > summary::after{transform:rotate(45deg) translate(-1px,-1px)}
+details.feedback > summary:hover{color:var(--fg)}
+details.feedback[open] > summary{margin-bottom:.85rem}
