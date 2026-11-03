@@ -53,12 +53,19 @@
   if (canHover) {
     document.querySelectorAll('a[data-preview]').forEach(function(a){
       a.addEventListener('mouseenter', function(){
+        var full = a.hasAttribute('data-preview-full');
+        pv.classList.toggle('full', full);
+        var place = function(){
+          var r = a.getBoundingClientRect(), w = 360;
+          var h = full && pv.naturalWidth ? Math.round(w * pv.naturalHeight / pv.naturalWidth) : 225;
+          var left = Math.min(Math.max(8, r.left), window.innerWidth - w - 8);
+          var top = r.top - h - 10 < 8 ? r.bottom + 10 : r.top - h - 10;
+          pv.style.left = (left + window.scrollX) + 'px';
+          pv.style.top = (top + window.scrollY) + 'px';
+        };
+        pv.onload = place;
         pv.src = a.getAttribute('data-preview');
-        var r = a.getBoundingClientRect(), w = 360, h = 225;
-        var left = Math.min(Math.max(8, r.left), window.innerWidth - w - 8);
-        var top = r.top - h - 10 < 8 ? r.bottom + 10 : r.top - h - 10;
-        pv.style.left = (left + window.scrollX) + 'px';
-        pv.style.top = (top + window.scrollY) + 'px';
+        place();
         pv.classList.add('on');
       });
       a.addEventListener('mouseleave', function(){ pv.classList.remove('on'); });

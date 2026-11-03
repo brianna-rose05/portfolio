@@ -112,7 +112,7 @@ ol{padding-left:1.4rem}
 @media (max-width:520px){.bento,.bento-col{gap:10px}}
 
 /* ---------- Writing: Substack-style post list + embed ---------- */
-.post{display:grid;grid-template-columns:200px minmax(0,1fr);gap:1.25rem;align-items:start;padding:1.25rem 0;border-top:1px solid var(--line)}
+.post{display:block;align-items:start;padding:1.25rem 0;border-top:1px solid var(--line)}
 .post-thumb{display:block;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff}
 .post-thumb img{display:block;width:100%;height:auto}
 .post h3{margin:0 0 .35rem}
@@ -170,3 +170,4 @@ ol{padding-left:1.4rem}
 .site-preview{position:absolute;left:0;top:0;width:360px;height:225px;object-fit:cover;object-position:top;border:1px solid var(--line);border-radius:8px;
   box-shadow:0 14px 36px rgba(0,0,0,.18);background:#fff;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease;z-index:50}
 .site-preview.on{opacity:1;transform:translateY(0)}
+.site-preview.full{height:auto;object-fit:contain}
