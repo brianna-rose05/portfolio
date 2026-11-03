@@ -102,7 +102,7 @@ figcaption{margin-top:.4rem;font-size:.82rem;line-height:1.45;color:var(--soft)}
 footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;
   font-size:.9rem;color:var(--soft)}
 .copy{font:inherit;color:var(--link);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
-video.demo{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;border:1px solid var(--line);border-radius:6px;background:var(--fill)}
+video.demo{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/10;border:1px solid var(--line);border-radius:6px;background:var(--fill)}
 ol{padding-left:1.4rem}
 
 /* ---------- Photos: two-column bento, each photo keeps its own shape ---------- */
