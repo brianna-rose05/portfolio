@@ -173,7 +173,7 @@ ol{padding-left:1.4rem}
 .site-preview.full{width:240px;height:auto;object-fit:contain}
 
 /* ---------- Apex screenshot bento ---------- */
-.shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 1.25rem}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:460px;margin:0 0 1.25rem}
 .shot{margin:0}
 .shot.wide{grid-column:1 / -1}
 .shot img,.shot video{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:1px solid var(--line);border-radius:8px;background:#fff}
