@@ -56,7 +56,7 @@
         var full = a.hasAttribute('data-preview-full');
         pv.classList.toggle('full', full);
         var place = function(){
-          var r = a.getBoundingClientRect(), w = 360;
+          var r = a.getBoundingClientRect(), w = full ? 240 : 360;
           var h = full && pv.naturalWidth ? Math.round(w * pv.naturalHeight / pv.naturalWidth) : 225;
           var left = Math.min(Math.max(8, r.left), window.innerWidth - w - 8);
           var top = r.top - h - 10 < 8 ? r.bottom + 10 : r.top - h - 10;
