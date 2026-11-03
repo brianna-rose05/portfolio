@@ -52,9 +52,9 @@ ul,ol{padding-left:1.4rem}
 li{margin-bottom:.45rem}
 strong{font-weight:700;color:var(--heading)}
 
-header{margin-bottom:1.5rem}
+header{margin-bottom:2rem}
 header p,.lede{margin:0;color:var(--soft);line-height:1.65}
-header + section > h2{margin-top:2.5rem}
+header + section > h2:first-child,header + section > h3:first-child{margin-top:0}
 
 a{color:var(--link);text-underline-offset:2px;transition:color .15s ease}
 a:hover{color:var(--link-hover)}
