@@ -166,36 +166,28 @@
   <div data-page="projects" class="page" hidden>
     <header>
       <h1>Projects</h1>
-      <p class="lede">Things I've built. Most started as a problem I had myself. For my studies, see <a href="#research">Research</a>.</p>
+      <p class="lede">Things I&#8217;ve built because I needed them.</p>
     </header>
-    <div>
-      <article class="card">
-        <h3><a href="#apex" data-preview="assets/previews/apexquoting.jpg">Apex</a></h3>
-        <p class="meta">Founder · $10K MRR · React · TypeScript · Supabase · Vercel</p>
-        <p>Instant, accurate quoting for countertop fabricators, on their own websites. A guided eight-step flow, 700+ stones, custom polygon layouts priced with the shoelace formula, private server-side pricing, and AI sketch tracing.</p>
-        <p><a href="https://www.apexquoting.com/" target="_blank" rel="noopener" data-preview="assets/previews/apexquoting.jpg">apexquoting.com</a> · <a href="https://ctop-quote.vercel.app/" target="_blank" rel="noopener" data-preview="assets/previews/apex-demo.jpg">Live demo</a></p>
-      </article>
-      <article class="card">
-        <h3><a href="https://tdfeed.com" target="_blank" rel="noopener" data-preview="assets/previews/tdfeed.jpg">TDFeed</a></h3>
-        <p class="meta">React · Supabase · Vercel</p>
-        <p>A research feed reader. Subscribe to sources, read in the app, save to collections. Built to track new research I write about.</p>
-      </article>
-      <article class="card">
-        <h3>Job Finder</h3>
-        <p class="meta">Node · Playwright · Claude Haiku</p>
-        <p>My personal job-search pipeline. Pulls listings from several sources, drops reposts and stale posts, scores fit, and pre-fills applications without ever submitting. <span class="todo">link or "private"</span></p>
-      </article>
-      <article class="card">
-        <h3>Punch List</h3>
-        <p class="meta">HN Algolia API · Claude Haiku</p>
-        <p>Scans Hacker News for problems people keep complaining about and sorts them into SaaS ideas. <span class="todo">link</span></p>
-      </article>
-      <article class="card">
-        <h3><a href="https://northbridgeaccounting.dev" target="_blank" rel="noopener" data-preview="assets/previews/northbridge.jpg">Northbridge</a></h3>
-        <p class="meta">WordPress · Elementor · custom plugin</p>
-        <p>A demo accounting-firm site built to show real WordPress work end to end.</p>
-      </article>
-    </div>
+
+    <section>
+      <h2><a href="https://tdfeed.com/" target="_blank" rel="noopener">TDFeed</a></h2>
+      <p class="meta"><a href="https://tdfeed.com/" target="_blank" rel="noopener">tdfeed.com</a></p>
+      <figure>
+        <video class="demo" src="https://tdfeed.com/tdfeed-demo-v4.mp4" autoplay muted loop playsinline preload="metadata" aria-label="TDFeed demo: research feeds in one place, notes on articles, collections, light and dark mode"></video>
+      </figure>
+      <p>I often read new AI research for Outside Engineer, and I was keeping track of it across a lot of tabs and newsletters. I built TDFeed to put it all in one place.</p>
+      <p>You add the sources you follow, and new articles show up in a single feed. You can read them in the app, take notes, and save them into collections for later.</p>
+      <p>Keeping up with research shouldn&#8217;t take more time than thinking about it. TDFeed handles the collecting, so I can spend my time reading and writing. A small group of people use it now, and I&#8217;m working on making it easy for anyone to set up their own.</p>
+    </section>
+
+    <section>
+      <h2>Agent orchestrator</h2>
+      <p class="meta">In progress</p>
+      <p>I&#8217;m building a tool for running AI coding agents on larger projects. You describe what you want to build, and it helps you plan the architecture, components and data model. You make those decisions, then a team of agents with different roles (a project manager, developers, reviewers) builds it in parallel while you review and give feedback.</p>
+      <p>I wanted something between doing everything yourself in one chat and letting a tool make every decision for you. Developers should spend their time on the decisions that matter, like how a system is designed, not on re-prompting agents one task at a time.</p>
+      <p>It&#8217;s the tool I want for my own projects.</p>
+    </section>
+
     <p><a href="https://github.com/brianna-rose05" target="_blank" rel="noopener">More on GitHub</a> · <a href="#home">Back home</a></p>
   </div>
 
