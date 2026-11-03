@@ -112,9 +112,10 @@
       <p class="lede">Instant, accurate quoting for countertop fabricators. I'm the founder and the engineer.</p>
     </header>
     <div class="shots">
-      <figure class="shot"><img src="assets/apex/quote.jpg" width="900" height="675" alt="Itemized Apex quote totaling $14,268 for Calacatta Caldia"><figcaption>Itemized, on the shop&#8217;s own pricing.</figcaption></figure>
-      <figure class="shot"><img src="assets/apex/measure.jpg" width="900" height="675" alt="Top-view drawing of an L-shaped counter and island with dimensions" loading="lazy"><figcaption>Any layout, math done for you.</figcaption></figure>
-      <figure class="shot"><img src="assets/apex/stones.jpg" width="900" height="675" alt="Stone catalog cards with Graphite highlighted" loading="lazy"><figcaption>700+ stones, every supplier.</figcaption></figure>
+      <figure class="shot"><video src="assets/apex/layout.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Choosing the L plus island layout"></video><figcaption>Pick any layout.</figcaption></figure>
+      <figure class="shot"><video src="assets/apex/measure.mp4" autoplay muted loop playsinline preload="metadata" aria-label="The countertop drawing updating as dimensions are entered"></video><figcaption>Enter measurements. The math is done for you.</figcaption></figure>
+      <figure class="shot"><video src="assets/apex/stones.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Scrolling the stone catalog with names appearing on hover"></video><figcaption>700+ stones from every supplier.</figcaption></figure>
+      <figure class="shot"><video src="assets/apex/price.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Swapping stones and the quote total changing"></video><figcaption>The shop&#8217;s own pricing, updated instantly.</figcaption></figure>
     </div>
     <p><strong>$10K in monthly recurring revenue.</strong> Stone fabricators put Apex on their own websites so homeowners can get a real price in minutes, and the shop gets a qualified lead with every detail already filled in.</p>
     <p><a href="https://www.apexquoting.com/" target="_blank" rel="noopener">apexquoting.com</a> · <a href="https://ctop-quote.vercel.app/" target="_blank" rel="noopener">Try the live demo</a></p>
@@ -135,25 +136,6 @@
         <li><strong>Stone.</strong> Browse 700+ stones by color and price tier, and compare up to three.</li>
         <li><strong>Quote.</strong> An itemized estimate in seconds, emailed to the homeowner and sent to the shop as a new lead.</li>
       </ol>
-    </section>
-
-    <section>
-      <h2>Under the hood</h2>
-      <figure id="apex-math" class="apex-math">
-        <div class="am-grid">
-          <svg viewBox="-16 -14 156 118" role="img" aria-label="An L-shaped countertop measured edge by edge with the shoelace formula, then a 72 by 36 inch island, totaling 51.56 square feet"></svg>
-          <div class="am-out" aria-live="off"></div>
-            <pre class="am-code" aria-hidden="true"><span data-line="0"><i>function</i> shoelaceArea(pts: [number, number][]): number {</span><span data-line="1">  <i>let</i> area = 0;</span><span data-line="2">  <i>const</i> n = pts.length;</span><span data-line="3">  <i>for</i> (<i>let</i> i = 0; i &lt; n; i++) {</span><span data-line="4">    <i>const</i> [x1, y1] = pts[i];</span><span data-line="5">    <i>const</i> [x2, y2] = pts[(i + 1) % n];</span><span data-line="6">    area += x1 * y2 - x2 * y1;</span><span data-line="7">  }</span><span data-line="8">  <i>return</i> Math.abs(area) / 2;</span><span data-line="9">}</span><span data-line="10"> </span><span data-line="11"><em>// in² → sq ft</em></span><span data-line="12">shoelaceArea(realPts) / 144;</span></pre>
-        </div>
-        <figcaption>The real code behind custom shapes. When a customer draws their own layout, Apex rebuilds it at real-world scale from the measured edges, walks every edge, and adds up the cross products. That&#8217;s the shoelace formula: any polygon, to the hundredth of a square foot.</figcaption>
-      </figure>
-      <ul>
-        <li>Square footage for any polygon, calculated with the shoelace formula to the hundredth of a square foot.</li>
-        <li>Pricing runs on the server, so customers see the estimate and never the shop's rates or markup.</li>
-        <li>Sketch tracing: upload a hand drawing and trace the layout over it.</li>
-        <li>Embeds on the shop's own domain, with their logo and colors.</li>
-        <li>Built with React, TypeScript, Supabase, Vercel serverless functions and Resend.</li>
-      </ul>
     </section>
 
     <p><a href="https://www.apexquoting.com/" target="_blank" rel="noopener">Visit apexquoting.com</a> · <a href="#home">Back home</a></p>
@@ -310,7 +292,6 @@
 </main>
 
 <script src="script.js"></script>
-<script src="assets/apex-math.js"></script>
 
 </body>
 </html>
