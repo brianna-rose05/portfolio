@@ -136,6 +136,16 @@
 
     <section>
       <h2>Under the hood</h2>
+      <figure id="apex-math" class="apex-math">
+        <div class="am-grid">
+          <svg viewBox="-16 -14 156 118" role="img" aria-label="An L-shaped countertop measured edge by edge with the shoelace formula, then a 72 by 36 inch island, totaling 51.56 square feet"></svg>
+          <div class="am-side">
+<pre class="am-code" aria-hidden="true"><span data-line="0"><i>function</i> sqft(pts: Point[]) {</span><span data-line="1">  <i>let</i> sum = 0, n = pts.length;</span><span data-line="2">  <i>for</i> (<i>let</i> i = 0; i &lt; n; i++) {</span><span data-line="3">    <i>const</i> [x1, y1] = pts[i];</span><span data-line="4">    <i>const</i> [x2, y2] = pts[(i + 1) % n];</span><span data-line="5">    sum += x1 * y2 - x2 * y1;</span><span data-line="6">  }</span><span data-line="7">  <em>// ÷ 2 for area, ÷ 144 for in² → ft²</em></span><span data-line="8">  <i>return</i> Math.abs(sum) / 2 / 144;</span><span data-line="9">}</span></pre>
+            <div class="am-out" aria-live="off"></div>
+          </div>
+        </div>
+        <figcaption>The shoelace formula, live: Apex walks each edge of the layout, adds up the cross products, and turns any shape into square feet to the hundredth. Code simplified for illustration.</figcaption>
+      </figure>
       <ul>
         <li>Square footage for any polygon, calculated with the shoelace formula to the hundredth of a square foot.</li>
         <li>Pricing runs on the server, so customers see the estimate and never the shop's rates or markup.</li>
@@ -299,6 +309,7 @@
 </main>
 
 <script src="script.js"></script>
+<script src="assets/apex-math.js"></script>
 
 </body>
 </html>
