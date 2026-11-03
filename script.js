@@ -72,4 +72,21 @@
       a.addEventListener('mouseleave', function(){ pv.classList.remove('on'); });
     });
   }
+
+  // Hover photos (.peek): place the popup next to the line being hovered, kept on screen
+  document.querySelectorAll('.peek').forEach(function(sp){
+    var img = sp.querySelector('img'); if (!img) return;
+    function place(e){
+      var rects = sp.getClientRects(), r = rects[0];
+      if (e && rects.length > 1) { for (var i = 0; i < rects.length; i++) { if (e.clientY >= rects[i].top - 2 && e.clientY <= rects[i].bottom + 2) { r = rects[i]; break; } } }
+      var w = img.offsetWidth || 300, h = img.offsetHeight || 200;
+      var x = e ? e.clientX : (r.left + r.right) / 2;
+      var left = Math.min(Math.max(8, x - w / 2), window.innerWidth - w - 8);
+      var top = r.top - h - 10 < 8 ? r.bottom + 10 : r.top - h - 10;
+      img.style.position = 'fixed'; img.style.left = left + 'px'; img.style.top = top + 'px';
+      img.style.bottom = 'auto'; img.style.transform = 'none';
+    }
+    sp.addEventListener('mouseenter', place);
+    sp.addEventListener('focus', function(){ place(null); });
+  });
 })();
