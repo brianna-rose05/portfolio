@@ -172,3 +172,5 @@ ol{padding-left:1.4rem}
 .site-preview.on{opacity:1;transform:translateY(0)}
 .site-preview.full{width:240px;height:auto;object-fit:contain}
 
+.bento figure{margin:0}
+.bento figcaption{margin-top:.35rem;font-size:.8rem;color:var(--soft)}
