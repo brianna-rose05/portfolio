@@ -70,7 +70,7 @@
   L.forEach(function (_, i) {
     step(320, function () { edges[i].classList.add('show'); labels[i].classList.add('show'); });
   });
-  step(500, function () { shape.classList.add('show'); setCode(1); lines(['<span class="am-dim">let</span> sum = 0']); });
+  step(500, function () { shape.classList.add('show'); setCode(1); lines(['<span class="am-dim">let</span> area = 0']); });
 
   var sum = 0;
   L.forEach(function (p, i) {
@@ -82,17 +82,21 @@
       edges.forEach(function (e, k) { e.classList.toggle('hot', k === i); });
       tri.setAttribute('points', '0,0 ' + p.join(',') + ' ' + q.join(','));
       tri.classList.toggle('show', !!term);
-      setCode(5);
+      setCode(6);
       lines([
         'edge ' + (i + 1) + ': ' + num(p[0]) + '×' + num(q[1]) + ' − ' + num(q[0]) + '×' + num(p[1]) + ' = <b>' + num(term) + '</b>',
-        '<span class="am-dim">sum</span> = ' + num(before) + ' + ' + num(term) + ' = <b>' + num(after) + '</b>'
+        '<span class="am-dim">area</span> = ' + num(before) + ' + ' + num(term) + ' = <b>' + num(after) + '</b>'
       ]);
     });
   });
-  step(1500, function () {
+  step(1300, function () {
     edges.forEach(function (e) { e.classList.remove('hot'); }); tri.classList.remove('show'); setCode(8);
+    lines(['|' + num(sum) + '| ÷ 2 = <b>' + fmt(sum / 2, 2) + ' in²</b>']);
+  });
+  step(1500, function () {
+    setCode(12);
     lines([
-      '|' + num(sum) + '| ÷ 2 = <b>' + fmt(sum / 2, 2) + ' in²</b>',
+      '|' + num(sum) + '| ÷ 2 = ' + fmt(sum / 2, 2) + ' in²',
       fmt(sum / 2, 2) + ' ÷ 144 = <b>' + fmt(sum / 2 / 144, 2) + ' sq ft</b>  <span class="am-dim">L-shape</span>'
     ]);
   });

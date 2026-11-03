@@ -158,4 +158,5 @@ ol{padding-left:1.4rem}
 .am-lbl.show,.am-origin+.am-lbl{opacity:1}
 .am-mid{text-anchor:middle}
 .am-end{text-anchor:end}
-@media (min-width:900px){.am-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center}}
+@media (min-width:900px){.am-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}.am-code{grid-column:1 / -1}}
+@media (max-width:520px){.am-code{font-size:10px;padding:10px}.am-grid{padding:12px}}
