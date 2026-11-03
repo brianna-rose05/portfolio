@@ -160,3 +160,7 @@ ol{padding-left:1.4rem}
 .am-end{text-anchor:end}
 @media (min-width:900px){.am-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}.am-code{grid-column:1 / -1}}
 @media (max-width:520px){.am-code{font-size:10px;padding:10px}.am-grid{padding:12px}}
+.peek img.wide{width:300px;background:#fff;padding:6px;border:1px solid var(--line)}
+.peek .peek-ico{width:14px;height:14px;fill:var(--muted);vertical-align:-2px}
+.peek:hover .peek-ico,.peek:focus .peek-ico{fill:var(--link)}
+.peek[aria-label="Reddit stats"]{text-decoration:none}
