@@ -89,4 +89,20 @@
     sp.addEventListener('mouseenter', place);
     sp.addEventListener('focus', function(){ place(null); });
   });
+
+  // Touch devices: tap a .peek to open it, tap it again or anywhere else to close
+  if (!canHover) {
+    document.addEventListener('click', function(e){
+      var sp = e.target.closest && e.target.closest('.peek');
+      document.querySelectorAll('.peek.open').forEach(function(o){ if (o !== sp) { o.classList.remove('open'); o.blur(); } });
+      if (sp) {
+        if (e.target.closest('a')) return;
+        var open = sp.classList.toggle('open');
+        if (!open) sp.blur();
+      }
+    });
+    window.addEventListener('scroll', function(){
+      document.querySelectorAll('.peek.open').forEach(function(o){ o.classList.remove('open'); o.blur(); });
+    }, {passive:true});
+  }
 })();
