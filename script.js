@@ -75,7 +75,7 @@
 
   // Hover photos (.peek): place the popup next to the line being hovered, kept on screen
   document.querySelectorAll('.peek').forEach(function(sp){
-    var img = sp.querySelector('img'); if (!img) return;
+    var img = sp.querySelector('img, .pc'); if (!img) return;
     function place(e){
       var rects = sp.getClientRects(), r = rects[0];
       if (e && rects.length > 1) { for (var i = 0; i < rects.length; i++) { if (e.clientY >= rects[i].top - 2 && e.clientY <= rects[i].bottom + 2) { r = rects[i]; break; } } }
