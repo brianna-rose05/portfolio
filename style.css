@@ -194,7 +194,7 @@ ol{padding-left:1.4rem}
 .pc-st{color:#F4B400;letter-spacing:1px}
 
 /* TDFeed early feedback (Reddit embeds) */
-.feedback{margin:0 0 1.5rem}
-.feedback-label{margin:0 0 .5rem;font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--soft)}
-.feedback .reddit-embed-bq{margin:0 0 .6rem;padding:.6rem .9rem;border:1px solid var(--line);border-radius:8px;font-size:.85rem}
-.feedback iframe{display:block;width:100%;max-width:100%;margin:0 0 .6rem;border:0}
+.feedback{margin:0 0 2rem}
+.feedback-label{margin:0 0 .85rem;font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--soft)}
+.feedback .reddit-embed-bq{margin:0 0 12px;padding:.6rem .9rem;border:1px solid var(--line);border-radius:8px;font-size:.85rem}
+.feedback iframe{display:block;width:100%;max-width:100%;margin:0 0 12px!important;border:0}
