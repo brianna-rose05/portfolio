@@ -211,3 +211,6 @@ details.feedback[open] > summary{margin-bottom:.85rem}
 /* Never allow sideways scrolling on small screens */
 html,body{overflow-x:clip}
 .footer-dot{color:var(--soft)}
+.papers{list-style:none;padding:0}
+.papers li{margin:0 0 .9rem}
+.papers .meta{display:block;margin-top:2px}
