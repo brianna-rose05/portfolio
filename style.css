@@ -104,3 +104,9 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--line);display
 .copy{font:inherit;color:var(--link);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
 video.demo{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;border:1px solid var(--line);border-radius:6px;background:var(--fill)}
 ol{padding-left:1.4rem}
+
+/* ---------- Photos: two-column bento, each photo keeps its own shape ---------- */
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin-bottom:1.5rem}
+.bento-col{display:flex;flex-direction:column;gap:16px}
+.bento img{display:block;width:100%;height:auto;background:var(--fill)}
+@media (max-width:520px){.bento,.bento-col{gap:10px}}
